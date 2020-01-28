@@ -1,4 +1,4 @@
-initialState = {
+const initialState = {
     loadingRanking: false,
     dataRanking: {},
     error: null
