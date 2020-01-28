@@ -1,30 +1,30 @@
 import api from "../services/api";
 
-export function searchMusic(text) {
+export function searchMusicArtist(text) {
     return dispatch => {
-        dispatch(searchMusicStarted());
+        dispatch(searchMusicArtistStarted());
 
         api.get(`https://api.vagalume.com.br/search.artmus?q=${text}&limit=5`)
         .then(response => {
-            dispatch(searchMusicSuccess(response.data));
+            dispatch(searchMusicArtistSuccess(response.data));
         })
         .catch(error => {
-            dispatch(searchMusicFailure(error.message));
+            dispatch(searchMusicArtistFailure(error.message));
         })
     }
 }
 
-const searchMusicStarted = () => ({
-    type: 'SEARCH_STARTED',
+const searchMusicArtistStarted = () => ({
+    type: 'SEARCH_MUSIC_ARTIST_STARTED',
 })
 
-const searchMusicSuccess = (data) => ({
-    type: 'SEARCH_SUCCESS',
+const searchMusicArtistSuccess = (data) => ({
+    type: 'SEARCH_MUSIC_ARTIST_SUCCESS',
     data
 })
 
-const searchMusicFailure = (error) => ({
-    type: 'SEARCH_FAILURE',
+const searchMusicArtistFailure = (error) => ({
+    type: 'SEARCH_MUSIC_ARTIST_FAILURE',
     payload: {
         error
     }   

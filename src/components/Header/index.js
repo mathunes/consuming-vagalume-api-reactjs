@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { searchMusic } from '../../actions';
 
 export default class Header extends Component {
     state = {
@@ -29,3 +31,10 @@ export default class Header extends Component {
         )
     }
 }
+
+const mapStateToProps = state => ({
+    search: state.search
+})
+
+const mapDispatchToProps = dispatch =>
+    bindActionCreators(searchMusic)
