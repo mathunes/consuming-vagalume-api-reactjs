@@ -20,8 +20,8 @@ export default function searchReducer(state = initalState, action) {
             return {
                 loading: false,
                 data: {},
-                error: action.payload.error
-            }
+                error: action.payload.error,
+            };
         default:
             return state;
     }
