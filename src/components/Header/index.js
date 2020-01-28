@@ -18,8 +18,6 @@ class Header extends Component {
         e.preventDefault();
 
         this.props.searchMusicArtist(this.state.text);
-        
-        console.log(this.props);
     }
 
     render() {
