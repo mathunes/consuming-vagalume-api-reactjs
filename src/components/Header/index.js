@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
-import { searchMusicArtist } from '../../actions';
+import * as searchActions from '../../actions';
 import { connect } from 'react-redux';
 
 class Header extends Component {
@@ -38,6 +38,6 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch =>
-    bindActionCreators(searchMusicArtist)
+    bindActionCreators(searchActions, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);
