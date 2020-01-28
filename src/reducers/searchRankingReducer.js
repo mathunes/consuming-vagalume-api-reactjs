@@ -1,7 +1,8 @@
 const initialState = {
     loadingRanking: false,
     dataRanking: {},
-    error: null
+    errorRanking: null,
+    searchRanking: false
 }
 
 export default function searchRankingReducer(state = initialState, action) {
@@ -9,17 +10,20 @@ export default function searchRankingReducer(state = initialState, action) {
         case 'SEARCH_RANKING_STARTED':
             return {
                 loadingRanking: true,
+                searchRanking: false
             }
         case 'SEARCH_RANKING_SUCCESS':
             return {
                 loadingRanking: false,
                 dataRanking: action.data,
+                searchRanking: true
             }
         case 'SEARCH_RANKING_FAILURE':
             return {
                 loadingRanking: false,
                 dataRanking: {},
-                error: action.payload.error
+                errorRanking: action.payload.error,
+                searchRanking: true
             }
         default:
             return state;

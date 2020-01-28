@@ -10,10 +10,20 @@ class Main extends Component {
     }
 
     render() {
-        console.log(this.props);
+        console.log(this.props.search);
+        console.log(this.props.search.dataRanking);
+        
         return (
             <main>
-                MAAAIN
+                <div className="card-music">
+
+                </div>
+                <div className="card-artist">
+
+                </div>
+                <div className="card-album">
+
+                </div>
             </main>
         )
     }

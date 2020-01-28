@@ -1,7 +1,7 @@
 const initalState = {
     loading: false,
     data: {},
-    error: null
+    error: null,
 }
 
 export default function searchReducer(state = initalState, action) {
