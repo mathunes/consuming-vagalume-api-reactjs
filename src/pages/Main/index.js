@@ -4,10 +4,13 @@ import { bindActionCreators } from 'redux';
 import * as searchActions from '../../actions';
 
 class Main extends Component {
+
+    componentDidMount() {
+        this.props.searchRanking()
+    }
+
     render() {
-
         console.log(this.props);
-
         return (
             <main>
                 MAAAIN
@@ -17,7 +20,7 @@ class Main extends Component {
 }
 
 const mapStateToProps = state => ({
-    search: state.search
+    search: state.searchRanking
 })
 
 const mapDispatchToProps = dispatch =>
