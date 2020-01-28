@@ -6,25 +6,25 @@ export function searchMusic(text) {
 
         api.get(`https://api.vagalume.com.br/search.artmus?q=${text}&limit=5`)
         .then(response => {
-            dispatch(searchMusicSuccess(response));
+            dispatch(searchMusicSuccess(response.data));
         })
         .catch(error => {
-            dispatch(searchMusicFailure(error));
+            dispatch(searchMusicFailure(error.message));
         })
     }
 }
 
 const searchMusicStarted = () => ({
-    type: 'SEARCH_MUSIC_STARTED',
+    type: 'SEARCH_STARTED',
 })
 
-const searchMusicSuccess = (response) => ({
-    type: 'SEARCH_MUSIC_SUCCESS',
-    dataReturn: response
+const searchMusicSuccess = (data) => ({
+    type: 'SEARCH_SUCCESS',
+    data
 })
 
 const searchMusicFailure = (error) => ({
-    type: 'SEARCH_MUSIC_FAILURE',
+    type: 'SEARCH_FAILURE',
     payload: {
         error
     }   
