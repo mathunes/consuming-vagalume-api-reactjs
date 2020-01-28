@@ -1,10 +1,18 @@
 import api from "../services/api";
 
+export function searchRankingFive() {
+    return dispatch => {
+        // dispatch(searchRankingFiveStarted());
+
+        // api.get(`rank.php?type=mus,alb,art&&scope=all&limit=5&apikey={key}`)
+    }
+}
+
 export function searchMusicArtist(text) {
     return dispatch => {
         dispatch(searchMusicArtistStarted());
 
-        api.get(`https://api.vagalume.com.br/search.artmus?q=${text}&limit=5`)
+        api.get(`/search.artmus?q=${text}&limit=5`)
         .then(response => {
             dispatch(searchMusicArtistSuccess(response.data));
         })
