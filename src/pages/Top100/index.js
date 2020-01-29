@@ -52,7 +52,10 @@ class Top100 extends Component {
                         {data.art.month.all.map((item, i) => {
                             return (
                                 <li key={i}>
-                                    
+                                    {console.log(item)}
+                                    <img src={item.pic_small} alt="Imagem do cantor/banda" />
+                                    <p>{item.name}</p>
+                                    <p>{item.rank}</p>
                                 </li>
                             )
                         })}
