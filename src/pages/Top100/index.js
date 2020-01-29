@@ -29,6 +29,8 @@ class Top100 extends Component {
         this.setState({
             type: classOption.substring(0, 3)
         })
+
+        this.props.history.push(`/top100/${classOption}`);
     }
 
     render() {
