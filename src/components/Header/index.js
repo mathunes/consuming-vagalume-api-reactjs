@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
-import { bindActionCreators } from 'redux';
-import * as searchActions from '../../actions';
-import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
 
-class Header extends Component {
+export default class Header extends Component {
     state = {
         text: "",
-        search: false
     }
 
     handleChangeInput = (e) => {
@@ -18,14 +13,8 @@ class Header extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        
-        
 
-            this.setState({
-                search: true
-            })
-            
-        
+        window.location.href = '/search/' + this.state.text;
         
     }
 
@@ -33,22 +22,14 @@ class Header extends Component {
 
         let container;
 
-        if (this.state.search) {
-            container =
-                <div>
-                    <Header />
-                    <Redirect to={'/search/' + this.state.text} />
-                </div>
-        } else {
-            container =
-            <div>
-                <h1>Vagalume</h1>
-                <form onSubmit={this.handleSubmit}>
-                    <input type="text" placeholder="O que você quer ouvir hoje?" onChange={this.handleChangeInput}/>
-                    <button type="submit">Buscar</button>
-                </form>
-            </div>
-        }
+        container =
+        <div>
+            <h1>Vagalume</h1>
+            <form onSubmit={this.handleSubmit}>
+                <input type="text" placeholder="O que você quer ouvir hoje?" onChange={this.handleChangeInput}/>
+                <button type="submit">Buscar</button>
+            </form>
+        </div>
 
         return (
             <header>
@@ -57,12 +38,3 @@ class Header extends Component {
         )
     }
 }
-
-const mapStateToProps = state => ({
-    search: state.search
-})
-
-const mapDispatchToProps = dispatch =>
-    bindActionCreators(searchActions, dispatch)
-
-export default connect(mapStateToProps, mapDispatchToProps)(Header);

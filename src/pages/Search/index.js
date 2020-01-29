@@ -25,7 +25,7 @@ class Search extends Component {
         this.validateURL();
 
         let text = this.props.match.params.text;
-        console.log(text);
+        
         if (!this.state.search) {
             this.search(text);
         }
@@ -44,28 +44,36 @@ class Search extends Component {
     componentDidUpdate() {
         
         let text = this.props.match.params.text;
-        console.log(text);
+
         if (!this.state.search) {
             this.search(text);
         }
+        
     }
 
     render() {
         
         let container;
 
-        console.log(this.props)
+        if (this.state.noText) {
+            container = <Redirect to="/" />
+        } else {
+            if (this.props.search.loading) {
+                container = <h1>Carregando</h1>
+            } else {
+                if (this.props.search.data.response !== undefined) {
 
-        // if (this.state.noText) {
-        //     container = <Redirect to="/" />
-        // } else {
-        //     if (this.props.search.loading) {
-        //         container = <h1>Carregando</h1>
-        //     } else {
-        //         // console.log(this.props.search.data.response)
-        //  
-        //     }
-        // }
+                    container = 
+                        <ul>
+                            {this.props.search.data.response.docs.map((item) => {
+                                console.log(item)
+                            })}
+                        </ul>
+
+                }
+                
+            }
+        }
 
         return (
             <div>
@@ -74,6 +82,7 @@ class Search extends Component {
             </div>
         )
     }
+
 }
 
 const mapStateToProps = state => ({
