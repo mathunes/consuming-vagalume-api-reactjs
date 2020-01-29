@@ -61,7 +61,7 @@ class Search extends Component {
                                         <p>Letra</p>
                                         <p>{item.title}</p>
                                         <p>{item.band}</p>
-                                        <Link to={'/lyrics/id=' + item.id}>Letra</Link>
+                                        <Link to={'/lyric/id=' + item.id}>Letra</Link>
                                     </li>
                                     
                                 )

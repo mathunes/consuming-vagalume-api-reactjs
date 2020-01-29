@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import Header from '../../components/Header';
 import { Redirect } from 'react-router-dom';
+import { bindActionCreators } from 'redux';
+import * as actionSearchLyric from '../../actions';
+import { connect } from 'react-redux';
 
-export default class Lyrics extends Component {
+class Lyric extends Component {
 
     state = {
         noId: false,
@@ -19,7 +22,7 @@ export default class Lyrics extends Component {
     }
 
     search(id) {
-        
+
     }
 
     componentDidMount() {
@@ -29,6 +32,7 @@ export default class Lyrics extends Component {
         
         this.search(id);
         
+        console.log(this.props)
     }
 
     render() {
@@ -47,3 +51,12 @@ export default class Lyrics extends Component {
         )
     }
 }
+
+const mapStateToProps = state => ({
+    searchLyric: state.searchLyric
+})
+
+const mapDispatchToProps = dispatch =>
+    bindActionCreators(actionSearchLyric, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(Lyric);
