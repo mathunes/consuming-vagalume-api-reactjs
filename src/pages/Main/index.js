@@ -31,7 +31,7 @@ class Main extends Component {
                             )
                         })}
                         </ol>
-                        <Link to="/top100/music">Ver o top 100 músicas</Link>
+                        <Link to="/top100/musicas">Ver o top 100 músicas</Link>
                     </div>
                     <div className="card-artist">
                         <h3>Artistas</h3>
@@ -44,7 +44,7 @@ class Main extends Component {
                             )
                         })}
                         </ol>
-                        <Link to="/top100/artist">Ver o top 100 artistas</Link>
+                        <Link to="/top100/artistas">Ver o top 100 artistas</Link>
                     </div>
                     <div className="card-album">
                         <h3>Álbum</h3>
@@ -59,7 +59,7 @@ class Main extends Component {
                             )
                         })}
                         </ol>
-                        <Link to="/top100/album">Ver o top 100 albuns</Link>
+                        <Link to="/top100/albuns">Ver o top 100 albuns</Link>
                     </div>
                 </div>
         }

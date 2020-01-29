@@ -26,10 +26,17 @@ class Top100 extends Component {
             </div>
         }
 
-        console.log(this.state.type)
-
         return (
-            <h2>Top 100</h2>
+            <div className="container">
+                <h2>Top 100</h2>
+
+                <select onChange={() => console.log('oi')}>
+                    <option>Músicas</option>
+                    <option>Artistas</option>
+                    <option>Álbuns</option>
+                </select>
+            </div>
+            
         )
     }
 }
