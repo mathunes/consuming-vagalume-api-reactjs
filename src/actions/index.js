@@ -1,10 +1,24 @@
 import api from "../services/api";
 
+export function searchLyric(id) {
+    return dispatch => {
+        dispatch(searchLyricStarted());
+
+        api.get(`https://api.vagalume.com.br/search.php?musid=${id}`)
+        .then(response => {
+            dispatch(searchLyricSuccess(response.data));
+        })
+        .catch(error => {
+            dispatch(searchLyricFailure(error.message));
+        })
+    }
+}
+
 export function searchRanking(num = 5) {
     return dispatch => {
         dispatch(searchRankingStarted());
 
-        api.get(`rank.php?type=mus,alb,art&&scope=all&limit=${num}&apikey={key}`)
+        api.get(`rank.php?type=mus,alb,art&&scope=all&limit=${num}`)
         .then(response => {
             dispatch(searchRankingSuccess(response.data));
         })
@@ -27,6 +41,22 @@ export function searchMusicArtist(text) {
         })
     }
 }
+
+const searchLyricStarted = () => ({
+    type: 'SEARCH_LYRIC_STARTED',
+})
+
+const searchLyricSuccess = (data) => ({
+    type: 'SEARCH_LYRIC_SUCCESS',
+    data
+})
+
+const searchLyricFailure = (error) => ({
+    type: 'SEARCH_LYRIC_FAILURE',
+    payload: {
+        error
+    }
+})
 
 const searchRankingStarted = () => ({
     type: 'SEARCH_RANKING_STARTED',

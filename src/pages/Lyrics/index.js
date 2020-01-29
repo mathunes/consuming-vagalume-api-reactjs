@@ -18,14 +18,17 @@ export default class Lyrics extends Component {
         }
     }
 
+    search(id) {
+        
+    }
+
     componentDidMount() {
         this.validateURL();
 
-        // let text = this.props.match.params.text;
+        let id = this.props.match.params.id;
         
-        // if (!this.state.search) {
-        //     this.search(text);
-        // }
+        this.search(id);
+        
     }
 
     render() {
