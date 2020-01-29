@@ -9,11 +9,10 @@ class Lyric extends Component {
 
     state = {
         noId: false,
-        text: '',
+        id: ''
     }
 
     validateURL() {
-        console.log(this.props.match.params.id);
         if (this.props.match.params.id === undefined) {
             this.setState({
                 noId: true
@@ -22,7 +21,7 @@ class Lyric extends Component {
     }
 
     search(id) {
-
+        this.props.searchLyric(id);
     }
 
     componentDidMount() {
@@ -30,12 +29,17 @@ class Lyric extends Component {
 
         let id = this.props.match.params.id;
         
+        this.setState({
+            id
+        })
+
         this.search(id);
         
-        console.log(this.props)
     }
 
     render() {
+
+        console.log(this.props)
 
         let container;
 
@@ -53,7 +57,7 @@ class Lyric extends Component {
 }
 
 const mapStateToProps = state => ({
-    searchLyric: state.searchLyric
+    search: state.searchLyric
 })
 
 const mapDispatchToProps = dispatch =>
