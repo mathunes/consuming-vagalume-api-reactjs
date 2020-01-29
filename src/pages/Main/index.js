@@ -59,7 +59,7 @@ class Main extends Component {
                             )
                         })}
                         </ol>
-                        <Link to="/top100/albums">Ver o top 100 albuns</Link>
+                        <Link to="/top100/album">Ver o top 100 albuns</Link>
                     </div>
                 </div>
         }

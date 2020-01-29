@@ -4,15 +4,32 @@ import { bindActionCreators } from 'redux';
 import * as searchActions from '../../actions';
 
 class Top100 extends Component {
+    state = {
+        type: '',
+    }
+
     componentDidMount() {
         this.props.searchRanking(100);
+
+        this.setState({
+            type: this.props.match.params.type
+        })
     }
 
     render() {
-        console.log(this.props)
+        let container;
+
+        if (this.props.search.searchRanking) {
+            container =
+            <div className="container">
+
+            </div>
+        }
+
+        console.log(this.state.type)
 
         return (
-            <p>Teste</p>
+            <h2>Top 100</h2>
         )
     }
 }
