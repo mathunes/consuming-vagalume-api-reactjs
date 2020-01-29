@@ -58,7 +58,7 @@ class Search extends Component {
                             {this.props.search.data.response.docs.map((item, i) => {
                                 return (
                                     <li key={i}>
-                                        <p>Artista</p>
+                                        <p>Letra</p>
                                         <p>{item.title}</p>
                                         <p>{item.band}</p>
                                         <Link to={'/lyrics/id=' + item.id}>Letra</Link>
