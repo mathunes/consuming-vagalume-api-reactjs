@@ -5,10 +5,12 @@ import * as searchActions from '../../actions';
 
 class Top100 extends Component {
     componentDidMount() {
-        console.log(this.props);
+        this.props.searchRanking(100);
     }
 
     render() {
+        console.log(this.props)
+
         return (
             <p>Teste</p>
         )
