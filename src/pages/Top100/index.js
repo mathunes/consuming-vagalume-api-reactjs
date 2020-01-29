@@ -18,9 +18,13 @@ class Top100 extends Component {
     }
 
     handleChangeSelect(e) {
-        this.setState({
-            type: e.target.value
-        })
+
+        let classOption = document.querySelector('select').querySelector('option:checked').getAttribute('class');
+        
+
+        // this.setState({
+        //     type: e.target.value
+        // })
     }
 
     render() {
@@ -29,16 +33,36 @@ class Top100 extends Component {
         try {
             document.querySelector(`.${this.props.match.params.type}`).setAttribute('selected', true);    
         } catch (error) {
-            
+           
         }
-        
 
-        if (this.props.search.searchRanking) {
-            container =
-            <div className="container">
+        // if (this.props.search.searchRanking) {
+        //     let { art, mus, alb } = this.props.search.dataRanking;
 
-            </div>
-        }
+        //     let chosenType;
+
+        //     switch (this.state.type) {
+        //         case 'musics':
+        //             chosenType = mus;
+        //             break;
+        //         case 'artists':
+        //             chosenType = art;
+        //             break;
+        //         case 'albums':
+        //             chosenType = alb;
+        //             break;
+        //         default:
+        //             chosenType = mus;
+        //             break;
+        //     }
+
+        //     console.log(chosenType);
+
+        //     container =
+        //     <div className="container">
+        //         {/* {console.log(art, mus, alb)} */}
+        //     </div>
+        // }
 
         return (
             <div className="container">
