@@ -24,20 +24,23 @@ class Top100 extends Component {
 
     handleChangeSelect() {
 
-        let classOption = document.querySelector('select').querySelector('option:checked').getAttribute('class');
+        let idOption = document.querySelector('select').querySelector('option:checked').getAttribute('id');
         
         this.setState({
-            type: classOption.substring(0, 3)
+            type: idOption.substring(0, 3)
         })
 
-        this.props.history.push(`/top100/${classOption}`);
+        this.props.history.push(`/top100/${idOption}`);
     }
 
     render() {
         let container;
 
         try {
-            document.querySelector(`.${this.props.match.params.type}`).setAttribute('selected', true);    
+            document.querySelector('#musics').removeAttribute('selected');
+            document.querySelector('#artists').removeAttribute('selected');
+            document.querySelector('#albums').removeAttribute('selected');
+            document.querySelector(`#${this.props.match.params.type}`).setAttribute('selected', true);    
         } catch (error) {
            
         }
@@ -108,12 +111,12 @@ class Top100 extends Component {
                 <h2>Top 100</h2>
 
                 <select onChange={this.handleChangeSelect}>
-                    <option className="musics">Músicas</option>
-                    <option className="artists">Artistas</option>
-                    <option className="albums">Álbuns</option>
+                    <option id="musics">Músicas</option>
+                    <option id="artists">Artistas</option>
+                    <option id="albums">Álbuns</option>
                 </select>
 
-                {container  }
+                {container}
             </div>
             
         )

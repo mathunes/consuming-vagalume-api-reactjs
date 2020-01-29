@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import * as searchActions from '../../actions';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 class Header extends Component {
     state = {
@@ -16,8 +17,8 @@ class Header extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-
-        this.props.searchMusicArtist(this.state.text);
+        console.log('oi')
+        // this.props.searchMusicArtist(this.state.text);
     }
 
     render() {
@@ -26,7 +27,7 @@ class Header extends Component {
                 <h1>Vagalume</h1>
                 <form onSubmit={this.handleSubmit}>
                     <input type="text" placeholder="O que você quer ouvir hoje?" onChange={this.handleChangeInput}/>
-                    <button type="submit">Buscar</button>
+                    <Link to="/search">Buscar</Link>
                 </form>
             </header>
         )

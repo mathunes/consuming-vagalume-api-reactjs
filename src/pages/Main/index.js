@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as searchActions from '../../actions';
 import { Link } from 'react-router-dom';
+import Header from '../../components/Header';
 
 class Main extends Component {
 
@@ -64,9 +65,12 @@ class Main extends Component {
         }
         
         return (
-            <main>
-                {container}
-            </main>
+            <div>
+                <Header />
+                <main>
+                    {container}
+                </main>
+            </div>
         )
     }
 }
