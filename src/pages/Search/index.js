@@ -3,7 +3,7 @@ import Header from '../../components/Header';
 import { bindActionCreators } from 'redux';
 import * as actionsSearch from '../../actions';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 
 class Search extends Component {
 
@@ -41,16 +41,6 @@ class Search extends Component {
         
     }
 
-    componentDidUpdate() {
-        
-        let text = this.props.match.params.text;
-
-        if (!this.state.search) {
-            this.search(text);
-        }
-        
-    }
-
     render() {
         
         let container;
@@ -65,13 +55,22 @@ class Search extends Component {
 
                     container = 
                         <ul>
-                            {this.props.search.data.response.docs.map((item) => {
-                                console.log(item)
+                            {console.log(this.props.search.data)}
+                            {this.props.search.data.response.docs.map((item, i) => {
+                                let { id } = item;
+                                console.log(item);
+                                return (
+                                    <li key={i}>
+                                        <p>{(id[0] === 'b' ) ? 'Artista' : 'Letra'}</p>
+                                        <p>{(id[0] === 'l' ) ? item.title : ''}</p>
+                                        <p>{item.band}</p>
+                                        <Link to={'music' + item.url} target="_blank">Letra</Link>
+                                    </li>
+                                    
+                                )
                             })}
                         </ul>
-
                 }
-                
             }
         }
 
