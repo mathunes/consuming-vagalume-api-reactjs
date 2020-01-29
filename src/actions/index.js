@@ -18,7 +18,7 @@ export function searchMusicArtist(text) {
     return dispatch => {
         dispatch(searchMusicArtistStarted());
 
-        api.get(`/search.artmus?q=${text}&limit=5`)
+        api.get(`/search.mus?q=${text}&limit=10`)
         .then(response => {
             dispatch(searchMusicArtistSuccess(response.data));
         })

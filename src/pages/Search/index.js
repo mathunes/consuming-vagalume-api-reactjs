@@ -55,16 +55,13 @@ class Search extends Component {
 
                     container = 
                         <ul>
-                            {console.log(this.props.search.data)}
                             {this.props.search.data.response.docs.map((item, i) => {
-                                let { id } = item;
-                                console.log(item);
                                 return (
                                     <li key={i}>
-                                        <p>{(id[0] === 'b' ) ? 'Artista' : 'Letra'}</p>
-                                        <p>{(id[0] === 'l' ) ? item.title : ''}</p>
+                                        <p>Artista</p>
+                                        <p>{item.title}</p>
                                         <p>{item.band}</p>
-                                        <Link to={'music' + item.url} target="_blank">Letra</Link>
+                                        <Link to={'/lyrics/id=' + item.id}>Letra</Link>
                                     </li>
                                     
                                 )
