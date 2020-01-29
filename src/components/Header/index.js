@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-import { bindActionCreators } from 'redux';
-import * as searchActions from '../../actions';
-import { connect } from 'react-redux';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
-class Header extends Component {
+export default class Header extends Component {
     state = {
         text: "",
         search: false
@@ -52,12 +49,3 @@ class Header extends Component {
         )
     }
 }
-
-const mapStateToProps = state => ({
-    search: state.search
-})
-
-const mapDispatchToProps = dispatch =>
-    bindActionCreators(searchActions, dispatch)
-
-export default connect(mapStateToProps, mapDispatchToProps)(Header);

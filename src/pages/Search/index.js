@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import Header from '../../components/Header';
+import { bindActionCreators } from 'redux';
+import * as actionsSearch from '../../actions';
+import { connect } from 'react-redux';
 
 class Search extends Component {
 
@@ -20,4 +23,11 @@ class Search extends Component {
     }
 }
 
-export default Search;
+const mapStateToProps = state => ({
+    search: state.search
+})
+
+const mapDispatchToProps = dispatch =>
+    bindActionCreators(actionsSearch, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(Search);
