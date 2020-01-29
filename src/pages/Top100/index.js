@@ -14,10 +14,24 @@ class Top100 extends Component {
         this.setState({
             type: this.props.match.params.type
         })
+
+    }
+
+    handleChangeSelect(e) {
+        this.setState({
+            type: e.target.value
+        })
     }
 
     render() {
         let container;
+
+        try {
+            document.querySelector(`.${this.props.match.params.type}`).setAttribute('selected', true);    
+        } catch (error) {
+            
+        }
+        
 
         if (this.props.search.searchRanking) {
             container =
@@ -30,10 +44,10 @@ class Top100 extends Component {
             <div className="container">
                 <h2>Top 100</h2>
 
-                <select onChange={() => console.log('oi')}>
-                    <option>Músicas</option>
-                    <option>Artistas</option>
-                    <option>Álbuns</option>
+                <select onChange={this.handleChangeSelect}>
+                    <option className="musics">Músicas</option>
+                    <option className="artists">Artistas</option>
+                    <option className="albums">Álbuns</option>
                 </select>
             </div>
             
