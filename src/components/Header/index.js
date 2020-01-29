@@ -19,12 +19,14 @@ class Header extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         
-        this.props.searchMusicArtist(this.state.search);
+        
 
-        this.setState({
-            search: true
-        })
-
+            this.setState({
+                search: true
+            })
+            
+        
+        
     }
 
     render() {

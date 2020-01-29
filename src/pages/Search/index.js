@@ -8,7 +8,9 @@ import { Redirect } from 'react-router-dom';
 class Search extends Component {
 
     state = {
-        noText: false
+        noText: false,
+        text: '',
+        search: false
     }
 
     validateURL() {
@@ -21,17 +23,49 @@ class Search extends Component {
 
     componentDidMount() {
         this.validateURL();
+
+        let text = this.props.match.params.text;
+        console.log(text);
+        if (!this.state.search) {
+            this.search(text);
+        }
+    }
+
+    search(text = "") {
+
+        this.setState({
+            search: true
+        })
+
+        this.props.searchMusicArtist(text);
+        
+    }
+
+    componentDidUpdate() {
+        
+        let text = this.props.match.params.text;
+        console.log(text);
+        if (!this.state.search) {
+            this.search(text);
+        }
     }
 
     render() {
         
         let container;
 
-        if (this.state.noText) {
-            container = <Redirect to="/" />
-        } else {
-            console.log()
-        }
+        console.log(this.props)
+
+        // if (this.state.noText) {
+        //     container = <Redirect to="/" />
+        // } else {
+        //     if (this.props.search.loading) {
+        //         container = <h1>Carregando</h1>
+        //     } else {
+        //         // console.log(this.props.search.data.response)
+        //  
+        //     }
+        // }
 
         return (
             <div>
