@@ -34,41 +34,68 @@ class Top100 extends Component {
     render() {
         let container;
 
-        console.log(this.state.type)
-
         try {
             document.querySelector(`.${this.props.match.params.type}`).setAttribute('selected', true);    
         } catch (error) {
            
         }
 
-        // if (this.props.search.searchRanking) {
-        //     let { art, mus, alb } = this.props.search.dataRanking;
+        if (this.props.search.searchRanking) {
 
-        //     let chosenType;
+            let top100;
+            let data = this.props.search.dataRanking;
 
-        //     switch (this.state.type) {
-        //         case 'musics':
-        //             chosenType = mus;
-        //             break;
-        //         case 'artists':
-        //             chosenType = art;
-        //             break;
-        //         case 'albums':
-        //             chosenType = alb;
-        //             break;
-        //         default:
-        //             chosenType = mus;
-        //             break;
-        //     }
+            switch (this.state.type) {
+                case 'art':
+                    
+                    top100 = <ol>
+                        {data.art.month.all.map((item, i) => {
+                            return (
+                                <li key={i}>
+                                    
+                                </li>
+                            )
+                        })}
+                    </ol>
 
-        //     console.log(chosenType);
+                    break;
+                case 'mus':
+                    
+                    top100 = <ol>
+                        {data.mus.month.all.map((item, i) => {
+                            return (
+                                <li key={i}>
+                                    <p>{item.name}</p>
+                                    <p>{item.art.name}</p>
+                                    <p>{item.rank}</p>
+                                </li>
+                            )
+                        })}
+                    </ol>
 
-        //     container =
-        //     <div className="container">
-        //         {/* {console.log(art, mus, alb)} */}
-        //     </div>
-        // }
+                    break;
+                case 'alb':
+                    
+                    top100 = <ol>
+                        {data.alb.month.all.map((item, i) => {
+                            return (
+                                <li key={i}>
+                                    {console.log(item)}
+                                </li>
+                            )
+                        })}
+                    </ol>
+
+                    break;
+                default:
+                    break;
+            }
+
+            container =
+            <div className="container">
+                {top100}
+            </div>
+        }
 
         return (
             <div className="container">
@@ -79,6 +106,8 @@ class Top100 extends Component {
                     <option className="artists">Artistas</option>
                     <option className="albums">Álbuns</option>
                 </select>
+
+                {container  }
             </div>
             
         )
