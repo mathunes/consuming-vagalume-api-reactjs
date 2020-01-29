@@ -3,26 +3,40 @@ import Header from '../../components/Header';
 import { bindActionCreators } from 'redux';
 import * as actionsSearch from '../../actions';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
 class Search extends Component {
 
-    getTextURL() {
-        console.log(this.props.match.params.text)
-        console.log(this.props);
+    state = {
+        noText: false
     }
 
-    componentDidUpdate() {
-        
+    validateURL() {
+        if (this.props.match.params.text === undefined) {
+            this.setState({
+                noText: true
+            })
+        }
+    }
+
+    componentDidMount() {
+        this.validateURL();
     }
 
     render() {
         
-        this.getTextURL();
+        let container;
+
+        if (this.state.noText) {
+            container = <Redirect to="/" />
+        } else {
+            console.log()
+        }
 
         return (
             <div>
                 <Header />
-                
+                {container}
             </div>
         )
     }

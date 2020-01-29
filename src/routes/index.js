@@ -9,7 +9,7 @@ const Routes = () => (
         <Switch>
             <Route exact path={process.env.PUBLIC_URL + '/'} component={Main} />
             <Route path={process.env.PUBLIC_URL + '/top100/:type'} component={Top100} />
-            <Route path={process.env.PUBLIC_URL + '/search/:text'} component={Search} />
+            <Route path={process.env.PUBLIC_URL + '/search/:text?'} component={Search} />
         </Switch>
     </BrowserRouter>
 )
