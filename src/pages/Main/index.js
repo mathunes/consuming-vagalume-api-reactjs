@@ -50,7 +50,6 @@ class Main extends Component {
                         <h3>Álbum</h3>
                         <ol>
                         {(alb.month.all).map((item, i) => {
-                            console.log(item)
                             return (
                                 <li key={i}>
                                     <p>{item.name}</p>
