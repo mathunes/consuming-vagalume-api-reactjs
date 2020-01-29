@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import * as searchActions from '../../actions';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 class Header extends Component {
     state = {
-        text: ""
+        text: "",
+        search: false
     }
 
     handleChangeInput = (e) => {
@@ -17,18 +18,37 @@ class Header extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log('oi')
+        console.log(this.props);
         // this.props.searchMusicArtist(this.state.text);
+        this.setState({
+            search: true
+        })
     }
 
     render() {
-        return (
-            <header>
+
+        let container;
+
+        if (this.state.search) {
+            container =
+                <div>
+                    <Header />
+                    <Redirect to={'/search/' + this.state.text} />
+                </div>
+        } else {
+            container =
+            <div>
                 <h1>Vagalume</h1>
                 <form onSubmit={this.handleSubmit}>
                     <input type="text" placeholder="O que você quer ouvir hoje?" onChange={this.handleChangeInput}/>
-                    <Link to="/search">Buscar</Link>
+                    <button type="submit">Buscar</button>
                 </form>
+            </div>
+        }
+
+        return (
+            <header>
+                {container}
             </header>
         )
     }
