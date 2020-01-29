@@ -39,12 +39,38 @@ class Lyric extends Component {
 
     render() {
 
-        console.log(this.props)
-
+        let data = this.props.search;
+        console.log(data)
         let container;
 
         if (this.state.noId) {
             container = <Redirect to="/" />
+        } else {
+            if (data.loading) {
+                container = <h2>Carregamento</h2>
+            } else {
+                container = 
+                <div>
+                    {(data.dataLyric.mus !== undefined) ? 
+                        data.dataLyric.mus.map((item, i) => {
+                            return (
+                                <div key>
+                                    <h2>{item.name}</h2>
+                                    <h3>{data.dataLyric.art.name}</h3>
+                                    <p>{item.text}</p>
+                                    {(item.translate !== undefined) ?
+                                        item.translate.map((item, i) => {
+                                            return (
+                                                <p key={i}>{item.text}</p>
+                                            )
+                                        }) : ''
+                                    }
+                                    
+                                </div>
+                            )
+                }) : '' }
+                </div>
+            }
         }
 
         return (
