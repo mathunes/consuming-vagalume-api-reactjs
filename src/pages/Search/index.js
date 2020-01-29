@@ -8,8 +8,7 @@ class Search extends Component {
 
     getTextURL() {
         console.log(this.props.match.params.text)
-        console.log(this.props)
-        // this.props.searchMusicArtist('oi')
+        console.log(this.props);
     }
 
     componentDidUpdate() {

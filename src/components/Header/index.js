@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import * as searchActions from '../../actions';
+import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
-export default class Header extends Component {
+class Header extends Component {
     state = {
         text: "",
         search: false
@@ -16,9 +19,12 @@ export default class Header extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         
+        this.props.searchMusicArtist(this.state.search);
+
         this.setState({
             search: true
         })
+
     }
 
     render() {
@@ -49,3 +55,12 @@ export default class Header extends Component {
         )
     }
 }
+
+const mapStateToProps = state => ({
+    search: state.search
+})
+
+const mapDispatchToProps = dispatch =>
+    bindActionCreators(searchActions, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
