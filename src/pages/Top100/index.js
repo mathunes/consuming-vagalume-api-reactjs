@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as searchActions from '../../actions';
+import Header from '../../components/Header';
 
 class Top100 extends Component {
     constructor() {
@@ -108,6 +109,7 @@ class Top100 extends Component {
 
         return (
             <div className="container">
+                <Header />
                 <h2>Top 100</h2>
 
                 <select onChange={this.handleChangeSelect}>
