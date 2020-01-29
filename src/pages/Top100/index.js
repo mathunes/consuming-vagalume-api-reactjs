@@ -4,6 +4,11 @@ import { bindActionCreators } from 'redux';
 import * as searchActions from '../../actions';
 
 class Top100 extends Component {
+    constructor() {
+        super();
+        this.handleChangeSelect = this.handleChangeSelect.bind(this)
+    }
+
     state = {
         type: '',
     }
@@ -12,23 +17,24 @@ class Top100 extends Component {
         this.props.searchRanking(100);
 
         this.setState({
-            type: this.props.match.params.type
+            type: this.props.match.params.type.substring(0, 3)
         })
 
     }
 
-    handleChangeSelect(e) {
+    handleChangeSelect() {
 
         let classOption = document.querySelector('select').querySelector('option:checked').getAttribute('class');
         
-
-        // this.setState({
-        //     type: e.target.value
-        // })
+        this.setState({
+            type: classOption.substring(0, 3)
+        })
     }
 
     render() {
         let container;
+
+        console.log(this.state.type)
 
         try {
             document.querySelector(`.${this.props.match.params.type}`).setAttribute('selected', true);    
