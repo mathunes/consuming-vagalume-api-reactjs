@@ -52,7 +52,6 @@ class Top100 extends Component {
                         {data.art.month.all.map((item, i) => {
                             return (
                                 <li key={i}>
-                                    {console.log(item)}
                                     <img src={item.pic_small} alt="Imagem do cantor/banda" />
                                     <p>{item.name}</p>
                                     <p>{item.rank}</p>
@@ -83,7 +82,9 @@ class Top100 extends Component {
                         {data.alb.month.all.map((item, i) => {
                             return (
                                 <li key={i}>
-                                    {console.log(item)}
+                                    <img src={item.cover.replace('-W100.jpg', '.webp')} alt="Imagem do álbum" />
+                                    <p>{item.name}</p>
+                                    <p>{item.art.name}</p>
                                 </li>
                             )
                         })}
