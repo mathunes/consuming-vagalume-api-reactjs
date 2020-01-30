@@ -52,6 +52,12 @@ export const LoadingImage = styled.div`
 
     img {
         width: 100px;
+
+        @media (max-width: 460px) {
+            & {
+                width: 70px;
+            }
+        }
     }
 `
 
