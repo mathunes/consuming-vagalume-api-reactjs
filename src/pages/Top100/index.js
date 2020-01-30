@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as searchActions from '../../actions';
 import Header from '../../components/Header';
+import loadingGif from '../../assets/images/loading.gif';
+import { LoadingImage } from './styles.js';
 
 class Top100 extends Component {
     constructor() {
@@ -105,6 +107,11 @@ class Top100 extends Component {
             <div className="container">
                 {top100}
             </div>
+        } else {
+            container =
+            <LoadingImage>
+                <img src={loadingGif} alt="Carregando"></img>
+            </LoadingImage>
         }
 
         return (

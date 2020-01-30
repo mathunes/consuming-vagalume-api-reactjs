@@ -87,7 +87,7 @@ export const CardContainer = styled.div`
     @media (max-width: 1000px) {
         & {
             margin: 20px;
-            margin-bottom: 0;
+            margin: 20px 0 0;
         }
     }
 
@@ -100,7 +100,6 @@ export const CardContainer = styled.div`
     @media (max-width: 650px) {
         & {
             width: 100%;
-            margin: 20px 0 0;
         }
     }
 
