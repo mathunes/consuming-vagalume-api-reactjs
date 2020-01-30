@@ -43,6 +43,18 @@ export const MainContainer = styled.div`
     }
 `;
 
+export const LoadingImage = styled.div`
+    width: 100%;
+    height: calc(100vh - 187px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: 100px;
+    }
+`
+
 export const CardsContainer = styled.div`
     display: flex;
     flex-direction: row;

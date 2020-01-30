@@ -4,7 +4,8 @@ import { bindActionCreators } from 'redux';
 import * as searchActions from '../../actions';
 import { Link } from 'react-router-dom';
 import Header from '../../components/Header';
-import { MainContainer, CardsContainer, CardContainer, Ordinal, ButtonTop, PictureArt } from './styles';
+import { MainContainer, CardsContainer, CardContainer, Ordinal, ButtonTop, PictureArt, LoadingImage } from './styles';
+import loadingGif from '../../assets/images/loading.gif';
 
 class Main extends Component {
 
@@ -18,7 +19,7 @@ class Main extends Component {
 
         if (this.props.search.searchRanking) {
             let {mus, art, alb} = this.props.search.dataRanking;
-
+            
             container = 
                 <CardsContainer>
                     <CardContainer>
@@ -90,6 +91,12 @@ class Main extends Component {
                         </Link>
                     </CardContainer>
                 </CardsContainer>
+        } else {
+            container = 
+                <LoadingImage>
+                    <img src={loadingGif} alt="Carregando"></img>
+                </LoadingImage>
+            
         }
         
         return (
