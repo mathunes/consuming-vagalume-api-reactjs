@@ -69,6 +69,7 @@ class Main extends Component {
             <MainContainer>
                 <Header />
                 <main>
+                    <h1>Top 100</h1>
                     {container}
                 </main>
             </MainContainer>

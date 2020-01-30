@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import '../../assets/fonts/index.css';
 
 export const HeaderContainer = styled.header`
     background-color: #151614;
@@ -6,6 +7,7 @@ export const HeaderContainer = styled.header`
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+    font-family: 'Rubik', sans-serif;
 
     img {
         max-width: 180px;
@@ -54,6 +56,7 @@ export const HeaderContainer = styled.header`
             height: 45px;
             width: 300px;
             transition: all .2s;
+            font-family: 'Rubik', sans-serif;
 
             &:hover {
                 cursor: pointer;

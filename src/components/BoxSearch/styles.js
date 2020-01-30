@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import '../../assets/fonts/index.css';
 
 export const BoxSearchContainer = styled.div`
     position: absolute;
@@ -43,6 +44,7 @@ export const BoxSearchContainer = styled.div`
             border-bottom: 2px solid #737373;
             padding: 0 0 10px;
             color: #ffffff;
+            font-family: 'Rubik', sans-serif;
 
             &::placeholder {
                 color: #737373;
