@@ -72,6 +72,19 @@ export const CardContainer = styled.div`
                 border: 0;
             }
 
+            div {
+                p {
+                    font-weight: bold;
+                    font-size: 14px;
+                }
+
+                p:first-child {
+                    color: #024B7B;
+                    margin-bottom: 2px;
+                    font-size: 16px;
+                }
+
+            }
         }
 
     }
@@ -113,6 +126,7 @@ export const PictureArt = styled.div`
     border-radius: 50%;
     display: flex;
     justify-content: center;
+    margin-right: 10px;
 
     img {
         height: 100%;
