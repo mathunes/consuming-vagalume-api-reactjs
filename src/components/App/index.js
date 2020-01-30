@@ -1,11 +1,13 @@
 import React from 'react';
 import Routes from '../../routes';
+import { Reset } from 'styled-reset';
 
 function App() {
   return (
-    <div className="App">
+    <React.Fragment>
+      <Reset />
       <Routes />
-    </div>
+    </React.Fragment>
   );
 }
 

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { HeaderContainer } from './styles';
 
 export default class Header extends Component {
     state = {
@@ -20,21 +21,14 @@ export default class Header extends Component {
 
     render() {
 
-        let container;
-
-        container =
-        <div>
-            <h1>Vagalume</h1>
-            <form onSubmit={this.handleSubmit}>
-                <input type="text" placeholder="O que você quer ouvir hoje?" onChange={this.handleChangeInput}/>
-                <button type="submit">Buscar</button>
-            </form>
-        </div>
-
         return (
-            <header>
-                {container}
-            </header>
+            <HeaderContainer>
+                <h1>Vagalume</h1>
+                <form onSubmit={this.handleSubmit}>
+                    <input type="text" placeholder="O que você quer ouvir hoje?" onChange={this.handleChangeInput}/>
+                    <button type="submit">Buscar</button>
+                </form>
+            </HeaderContainer>
         )
     }
 }
