@@ -62,6 +62,7 @@ export const CardContainer = styled.div`
             flex-direction: row;
             align-items: center;
             border-bottom: 1px solid #F1F1F1;
+            padding: 10px 0;
 
             &:hover {
                 background-color: #F1F1F1;
@@ -70,7 +71,9 @@ export const CardContainer = styled.div`
             &:last-child {
                 border: 0;
             }
+
         }
+
     }
 `
 
@@ -80,4 +83,24 @@ export const Ordinal = styled.p`
     color: #969696;
     width: 40px;
     margin-right: 10px;
+`
+
+export const ButtonTop = styled.button`
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 15px;
+    background-color: #49A8D7;
+    border: 0;
+    border-radius: 5px;
+    width: 100%;
+    color: #ffffff;
+    transition: all .2s;
+    margin-top: 10px;
+
+    &:hover {
+        background-color: #49C2D7;
+        cursor: pointer;
+    }
 `

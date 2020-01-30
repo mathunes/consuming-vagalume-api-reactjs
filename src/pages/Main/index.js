@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import * as searchActions from '../../actions';
 import { Link } from 'react-router-dom';
 import Header from '../../components/Header';
-import { MainContainer, CardsContainer, CardContainer, Ordinal } from './styles';
+import { MainContainer, CardsContainer, CardContainer, Ordinal, ButtonTop } from './styles';
 
 class Main extends Component {
 
@@ -36,7 +36,11 @@ class Main extends Component {
                             )
                         })}
                         </ol>
-                        <Link to="/top100/musics">Ver o top 100 músicas</Link>
+                        <Link to="/top100/musics">
+                            <ButtonTop>
+                            Ver o top 100 músicas
+                            </ButtonTop>
+                        </Link>
                     </CardContainer>
 
                     <CardContainer>
@@ -53,7 +57,11 @@ class Main extends Component {
                             )
                         })}
                         </ol>
-                        <Link to="/top100/artists">Ver o top 100 artistas</Link>
+                        <Link to="/top100/artists">
+                            <ButtonTop>
+                                Ver o top 100 artistas
+                            </ButtonTop>
+                        </Link>
                     </CardContainer>
 
                     <CardContainer>
@@ -71,7 +79,11 @@ class Main extends Component {
                             )
                         })}
                         </ol>
-                        <Link to="/top100/albums">Ver o top 100 albuns</Link>
+                        <Link to="/top100/albums">
+                            <ButtonTop>
+                            Ver o top 100 albuns
+                            </ButtonTop>
+                        </Link>
                     </CardContainer>
                 </CardsContainer>
         }
