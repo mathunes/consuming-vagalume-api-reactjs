@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import * as searchActions from '../../actions';
 import { Link } from 'react-router-dom';
 import Header from '../../components/Header';
-import { MainContainer, CardsContainer, CardContainer } from './styles';
+import { MainContainer, CardsContainer, CardContainer, Ordinal } from './styles';
 
 class Main extends Component {
 
@@ -22,40 +22,51 @@ class Main extends Component {
             container = 
                 <CardsContainer>
                     <CardContainer>
-                        <h3>Músicas</h3>
+                        <h2>Músicas</h2>
                         <ol>
                         {(mus.month.all).map((item, i) => {
                             return (
                                 <li key={i}>
-                                    <p>{item.name}</p>
-                                    <p>{item.art.name}</p>
+                                    <Ordinal>{i+1 + '°'}</Ordinal>
+                                    <div>
+                                        <p>{item.name}</p>
+                                        <p>{item.art.name}</p>
+                                    </div>
                                 </li>
                             )
                         })}
                         </ol>
                         <Link to="/top100/musics">Ver o top 100 músicas</Link>
                     </CardContainer>
+
                     <CardContainer>
-                        <h3>Artistas</h3>
+                        <h2>Artistas</h2>
                         <ol>
                         {(art.month.all).map((item, i) => {
                             return (
                                 <li key={i}>
-                                    <p>{item.name}</p>
+                                    <Ordinal>{i+1 + '°'}</Ordinal>
+                                    <div>
+                                        <p>{item.name}</p>
+                                    </div>
                                 </li>
                             )
                         })}
                         </ol>
                         <Link to="/top100/artists">Ver o top 100 artistas</Link>
                     </CardContainer>
+
                     <CardContainer>
-                        <h3>Álbum</h3>
+                        <h2>Álbum</h2>
                         <ol>
                         {(alb.month.all).map((item, i) => {
                             return (
                                 <li key={i}>
-                                    <p>{item.name}</p>
-                                    <p>{item.art.name}</p>
+                                    <Ordinal>{i+1 + '°'}</Ordinal>
+                                    <div>
+                                        <p>{item.name}</p>
+                                        <p>{item.art.name}</p>
+                                    </div>
                                 </li>
                             )
                         })}
