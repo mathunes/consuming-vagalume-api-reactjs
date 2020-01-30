@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import * as searchActions from '../../actions';
 import { Link } from 'react-router-dom';
 import Header from '../../components/Header';
-import { MainContainer, CardsContainer, CardContainer, Ordinal, ButtonTop } from './styles';
+import { MainContainer, CardsContainer, CardContainer, Ordinal, ButtonTop, PictureArt } from './styles';
 
 class Main extends Component {
 
@@ -50,6 +50,10 @@ class Main extends Component {
                             return (
                                 <li key={i}>
                                     <Ordinal>{i+1 + '°'}</Ordinal>
+                                    <PictureArt>
+                                        <img src={item.pic_small} alt="Foto do artista" />
+                                    </PictureArt>
+
                                     <div>
                                         <p>{item.name}</p>
                                     </div>

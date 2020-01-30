@@ -104,3 +104,17 @@ export const ButtonTop = styled.button`
         cursor: pointer;
     }
 `
+
+export const PictureArt = styled.div`
+    width: 40px;
+    height: 40px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+
+    img {
+        height: 100%;
+    }
+`
