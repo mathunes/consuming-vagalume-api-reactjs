@@ -23,8 +23,6 @@ export default class Header extends Component {
         this.setState({
             search: true
         })
-
-        // window.location.href = '/search/' + this.state.text;
         
     }
 
