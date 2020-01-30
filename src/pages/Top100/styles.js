@@ -73,7 +73,7 @@ export const CardContainer = styled.div`
 
     div {
         p {
-            font-size: 14px;
+            font-size: 16px;
             margin: 5px;
         }
 
@@ -85,8 +85,11 @@ export const CardContainer = styled.div`
                 font-size: 16px;
                 font-weight: bold;
                 text-decoration: none;
-            }
 
+                &:hover {
+                    color: #041591;
+                }
+            }
         }
 
         p:last-child {

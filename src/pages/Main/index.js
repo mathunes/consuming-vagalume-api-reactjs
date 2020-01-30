@@ -30,7 +30,11 @@ class Main extends Component {
                                 <li key={i}>
                                     <Ordinal>{i+1 + '°'}</Ordinal>
                                     <div>
-                                        <p>{item.name}</p>
+                                        <p>
+                                            <Link to={'/lyric/id=' + item.id}>
+                                                {item.name}
+                                            </Link>
+                                        </p>
                                         <p>{item.art.name}</p>
                                     </div>
                                 </li>

@@ -153,6 +153,17 @@ export const CardContainer = styled.div`
                     color: #024B7B;
                     margin-bottom: 2px;
                     font-size: 16px;
+
+                    a {
+                        color: #024B7B;
+                        margin-bottom: 2px;
+                        font-size: 16px;
+                        text-decoration: none;
+
+                        &:hover {
+                            color: #041591;
+                        }
+                    }
                 }
 
                 @media (max-width: 460px) {
