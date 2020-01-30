@@ -78,6 +78,10 @@ export const CardContainer = styled.div`
         }
 
         p:first-child {
+            color: #024B7B;
+            margin-bottom: 2px;
+            font-size: 16px;
+            font-weight: bold;
 
             a {
                 color: #024B7B;
@@ -87,21 +91,22 @@ export const CardContainer = styled.div`
                 text-decoration: none;
 
                 &:hover {
-                    color: #041591;
+                    color: #021E7B;
                 }
             }
         }
 
-        p:last-child {
-            background-color: #f1f1f1;
-            text-align: center;
-            border-radius: 5px;
-            font-size: 12px;
-            width: 70px;
-            padding: 3px;
-        }
     }
 
+`
+
+export const Score = styled.p`
+    background-color: #f1f1f1;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 12px !important;
+    width: 80px;
+    padding: 3px;
 `
 
 export const Ordinal = styled.p`
@@ -117,3 +122,21 @@ export const Ordinal = styled.p`
         }
     }
 `
+export const PictureArt = styled.div`
+    width: 60px;
+    height: 60px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    margin-right: 10px;
+
+    img {
+        height: 100%;
+    }
+`
+
+export const PictureAlb = styled(PictureArt)`
+    border-radius: 5px;
+`;

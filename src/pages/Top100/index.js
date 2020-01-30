@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import * as searchActions from '../../actions';
 import Header from '../../components/Header';
 import loadingGif from '../../assets/images/loading.gif';
-import { LoadingImage, RankingContainer, CardContainer, Ordinal } from './styles.js';
+import {LoadingImage, RankingContainer, CardContainer, Ordinal, PictureArt, PictureAlb, Score } from './styles.js';
 import { Link } from 'react-router-dom';
 
 class Top100 extends Component {
@@ -64,10 +64,12 @@ class Top100 extends Component {
                                     <Ordinal>
                                         {i+1 + '°'}
                                     </Ordinal>
-                                    <div>
+                                    <PictureArt>
                                         <img src={item.pic_small} alt="Imagem do cantor/banda" />
+                                    </PictureArt>
+                                    <div>
                                         <p>{item.name}</p>
-                                        <p>{item.rank + ' Pontos'}</p>
+                                        <Score>{item.rank + ' Pontos'}</Score>
                                     </div>
                                 </CardContainer>
                             )
@@ -91,8 +93,7 @@ class Top100 extends Component {
                                             </Link>
                                         </p>
                                         <p>{item.art.name}</p>
-                                        <p>{item.rank + ' Pontos'}</p>
-                                        {console.log(item)}
+                                        <Score>{item.rank + ' Pontos'}</Score>
                                     </div>
                                 </CardContainer>
                             )
@@ -101,7 +102,6 @@ class Top100 extends Component {
 
                     break;
                 case 'alb':
-                    
                     top100 = <ol>
                         {data.alb.month.all.map((item, i) => {
                             return (
@@ -109,8 +109,10 @@ class Top100 extends Component {
                                     <Ordinal>
                                         {i+1 + '°'}
                                     </Ordinal>
-                                    <div>
+                                    <PictureAlb>
                                         <img src={item.cover.replace('-W100.jpg', '.webp')} alt="Imagem do álbum" />
+                                    </PictureAlb>
+                                    <div>
                                         <p>{item.name}</p>
                                         <p>{item.art.name}</p>
                                     </div>
