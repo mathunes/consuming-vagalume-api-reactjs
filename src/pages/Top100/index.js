@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import * as searchActions from '../../actions';
 import Header from '../../components/Header';
 import loadingGif from '../../assets/images/loading.gif';
-import { LoadingImage, RankingContainer } from './styles.js';
+import { LoadingImage, RankingContainer, CardContainer, Ordinal } from './styles.js';
 
 class Top100 extends Component {
     constructor() {
@@ -59,11 +59,16 @@ class Top100 extends Component {
                     top100 = <ol>
                         {data.art.month.all.map((item, i) => {
                             return (
-                                <li key={i}>
-                                    <img src={item.pic_small} alt="Imagem do cantor/banda" />
-                                    <p>{item.name}</p>
-                                    <p>{item.rank}</p>
-                                </li>
+                                <CardContainer key={i}>
+                                    <Ordinal>
+                                        {i+1 + '°'}
+                                    </Ordinal>
+                                    <div>
+                                        <img src={item.pic_small} alt="Imagem do cantor/banda" />
+                                        <p>{item.name}</p>
+                                        <p>{item.rank + ' Pontos'}</p>
+                                    </div>
+                                </CardContainer>
                             )
                         })}
                     </ol>
@@ -74,11 +79,16 @@ class Top100 extends Component {
                     top100 = <ol>
                         {data.mus.month.all.map((item, i) => {
                             return (
-                                <li key={i}>
-                                    <p>{item.name}</p>
-                                    <p>{item.art.name}</p>
-                                    <p>{item.rank}</p>
-                                </li>
+                                <CardContainer key={i}>
+                                    <Ordinal>
+                                        {i+1 + '°'}
+                                    </Ordinal>
+                                    <div>
+                                        <p>{item.name}</p>
+                                        <p>{item.art.name}</p>
+                                        <p>{item.rank + ' Pontos'}</p>
+                                    </div>
+                                </CardContainer>
                             )
                         })}
                     </ol>
@@ -89,11 +99,16 @@ class Top100 extends Component {
                     top100 = <ol>
                         {data.alb.month.all.map((item, i) => {
                             return (
-                                <li key={i}>
-                                    <img src={item.cover.replace('-W100.jpg', '.webp')} alt="Imagem do álbum" />
-                                    <p>{item.name}</p>
-                                    <p>{item.art.name}</p>
-                                </li>
+                                <CardContainer key={i}>
+                                    <Ordinal>
+                                        {i+1 + '°'}
+                                    </Ordinal>
+                                    <div>
+                                        <img src={item.cover.replace('-W100.jpg', '.webp')} alt="Imagem do álbum" />
+                                        <p>{item.name}</p>
+                                        <p>{item.art.name}</p>
+                                    </div>
+                                </CardContainer>
                             )
                         })}
                     </ol>

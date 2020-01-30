@@ -62,3 +62,50 @@ export const LoadingImage = styled.div`
         }
     }
 `
+
+export const CardContainer = styled.div`
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 60px;
+
+    div {
+        p {
+            font-size: 14px;
+            margin: 5px;
+        }
+
+        p:first-child {
+            color: #024B7B;
+            margin-bottom: 2px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        p:last-child {
+            background-color: #f1f1f1;
+            text-align: center;
+            border-radius: 5px;
+            font-size: 12px;
+            width: 70px;
+            padding: 3px;
+        }
+    }
+
+`
+
+export const Ordinal = styled.p`
+    font-size: 40px;
+    font-weight: bold;
+    color: #969696;
+    width: 40px;
+    margin-right: 40px;
+
+    @media (max-width: 460px) {
+        & {
+            font-size: 28px;
+        }
+    }
+`
