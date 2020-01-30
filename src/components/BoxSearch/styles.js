@@ -14,7 +14,22 @@ export const BoxSearchContainer = styled.div`
     button {
         position: absolute;
         top: 20px;
-        right: 20px;
+        right: 5%;
+        background-color: transparent;
+        border: 0;
+        padding: 0;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        img {
+            width: 2vw;
+        }
+
+        &:focus {
+            outline: none;
+        }
     }
 
     form {
@@ -26,7 +41,7 @@ export const BoxSearchContainer = styled.div`
             font-size: 4vw;
             width: 100%;
             border-bottom: 2px solid #737373;
-            padding: 10px 0;
+            padding: 0 0 10px;
             color: #ffffff;
 
             &::placeholder {
@@ -45,6 +60,12 @@ export const BoxSearchContainer = styled.div`
         form {
             input {
                 font-size: 6vw;
+            }
+        }
+
+        button {
+            img {
+                width: 6vw;
             }
         }
     }

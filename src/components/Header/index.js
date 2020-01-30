@@ -28,15 +28,23 @@ export default class Header extends Component {
         
     }
 
+    handleChildClick() {
+        this.setState({
+            search: false
+        })
+    }
+
     render() {
 
         return (
             <div>
-                {this.state.search ? <BoxSearch /> : ''}
+                {this.state.search ? <BoxSearch handleClick={this.handleChildClick.bind(this)}/> : ''}
                 <HeaderContainer>
                     <img src={logoVagalume} alt="Logo vagalume" />
+
                     <form onSubmit={this.handleSubmit}>
                         <input type="text" placeholder="O que você quer ouvir hoje?" onChange={this.handleChangeInput}/>
+
                         <button type="submit">
                             <img src={iconSearchWhite} alt="Buscar" />
                             <img src={iconSearchYellow} alt="Buscar" />
