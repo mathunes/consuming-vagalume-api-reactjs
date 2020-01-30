@@ -24,6 +24,16 @@ export const HeaderContainer = styled.header`
             input[type="text"]::placeholder {
                 color: #CCFF00;
             }
+
+            button {
+                img:first-child {
+                    display: none;
+                }
+
+                img:last-child {
+                    display: inline;
+                }
+            }
         }
 
         * {
@@ -52,13 +62,18 @@ export const HeaderContainer = styled.header`
             border-bottom-right-radius: 5px;
             padding-right: 15px;
 
+            img {
+                width: 15px;
+            }
+
+            img:last-child {
+                display: none
+            }
+
             &:hover {
                 cursor: pointer;
             }
 
-            img {
-                width: 15px;
-            }
         }
 
     }
