@@ -78,10 +78,15 @@ export const CardContainer = styled.div`
         }
 
         p:first-child {
-            color: #024B7B;
-            margin-bottom: 2px;
-            font-size: 16px;
-            font-weight: bold;
+
+            a {
+                color: #024B7B;
+                margin-bottom: 2px;
+                font-size: 16px;
+                font-weight: bold;
+                text-decoration: none;
+            }
+
         }
 
         p:last-child {

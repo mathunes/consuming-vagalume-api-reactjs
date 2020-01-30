@@ -5,6 +5,7 @@ import * as searchActions from '../../actions';
 import Header from '../../components/Header';
 import loadingGif from '../../assets/images/loading.gif';
 import { LoadingImage, RankingContainer, CardContainer, Ordinal } from './styles.js';
+import { Link } from 'react-router-dom';
 
 class Top100 extends Component {
     constructor() {
@@ -84,9 +85,14 @@ class Top100 extends Component {
                                         {i+1 + '°'}
                                     </Ordinal>
                                     <div>
-                                        <p>{item.name}</p>
+                                        <p>
+                                            <Link to={'/lyric/id=' + item.id}>
+                                                {item.name}
+                                            </Link>
+                                        </p>
                                         <p>{item.art.name}</p>
                                         <p>{item.rank + ' Pontos'}</p>
+                                        {console.log(item)}
                                     </div>
                                 </CardContainer>
                             )
