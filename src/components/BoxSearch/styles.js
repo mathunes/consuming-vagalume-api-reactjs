@@ -4,12 +4,11 @@ import '../../assets/fonts/index.css';
 export const BoxSearchContainer = styled.div`
     position: absolute;
     width: 100%;
-    height: 100vh;
-    background-color: rgba(26, 26, 26, 0.9);
+    height: 100%;
+    background-color: rgba(21, 22, 20, 0.9);
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     z-index: 3;
 
     button {
@@ -35,19 +34,22 @@ export const BoxSearchContainer = styled.div`
 
     form {
         width: 90%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
 
         input {
             background-color: transparent;
             border: 0;
             font-size: 4vw;
             width: 100%;
-            border-bottom: 2px solid #737373;
+            border-bottom: 2px solid #c4c4c4;
             padding: 0 0 10px;
             color: #ffffff;
             font-family: 'Rubik', sans-serif;
 
             &::placeholder {
-                color: #737373;
+                color: #c4c4c4;
             }
 
             &:focus {

@@ -8,10 +8,11 @@ export const MainContainer = styled.div`
 
     main {
         width: 100%;
-        height: calc(100vh - 87px);
+        min-height: calc(100vh - 87px);
         padding: 20px;
         box-sizing: border-box;
         font-family: 'Rubik', sans-serif;
+        position: relative;
 
         h1 {
             text-align: center;
