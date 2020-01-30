@@ -17,11 +17,11 @@ export default class Header extends Component {
         })
     }
 
-    handleSubmit = (e) => {
+    handleClick = (e) => {
         e.preventDefault();
 
         this.setState({
-            search: true,
+            search: true
         })
 
         // window.location.href = '/search/' + this.state.text;
@@ -42,7 +42,7 @@ export default class Header extends Component {
                 <HeaderContainer>
                     <img src={logoVagalume} alt="Logo vagalume" />
 
-                    <form onSubmit={this.handleSubmit}>
+                    <form onClick={this.handleClick}>
                         <input type="text" placeholder="O que você quer ouvir hoje?" onChange={this.handleChangeInput}/>
 
                         <button type="submit">

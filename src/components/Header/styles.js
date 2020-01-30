@@ -54,6 +54,10 @@ export const HeaderContainer = styled.header`
             height: 45px;
             width: 300px;
             transition: all .2s;
+
+            &:hover {
+                cursor: pointer;
+            }
         }
 
         button {
