@@ -31,17 +31,19 @@ export default class Header extends Component {
     render() {
 
         return (
-            <HeaderContainer>
+            <div>
                 {this.state.search ? <BoxSearch /> : ''}
-                <img src={logoVagalume} alt="Logo vagalume" />
-                <form onSubmit={this.handleSubmit}>
-                    <input type="text" placeholder="O que você quer ouvir hoje?" onChange={this.handleChangeInput}/>
-                    <button type="submit">
-                        <img src={iconSearchWhite} alt="Buscar" />
-                        <img src={iconSearchYellow} alt="Buscar" />
-                    </button>
-                </form>
-            </HeaderContainer>
+                <HeaderContainer>
+                    <img src={logoVagalume} alt="Logo vagalume" />
+                    <form onSubmit={this.handleSubmit}>
+                        <input type="text" placeholder="O que você quer ouvir hoje?" onChange={this.handleChangeInput}/>
+                        <button type="submit">
+                            <img src={iconSearchWhite} alt="Buscar" />
+                            <img src={iconSearchYellow} alt="Buscar" />
+                        </button>
+                    </form>
+                </HeaderContainer>
+            </div>
         )
     }
 }

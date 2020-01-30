@@ -8,7 +8,7 @@ export default class BoxSearch extends Component {
                 <button>Fechar</button>
                 <h1>oi</h1>
                 <form>
-                    <input type="text" placeholder="O que você quer ouvir hoje?" />
+                    <input type="text" placeholder="O que você quer ouvir hoje?" autoFocus/>
                 </form>
             </BoxSearchContainer>
         )
