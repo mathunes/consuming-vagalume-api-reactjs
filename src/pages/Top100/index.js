@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import * as searchActions from '../../actions';
 import Header from '../../components/Header';
 import loadingGif from '../../assets/images/loading.gif';
-import { LoadingImage } from './styles.js';
+import { LoadingImage, RankingContainer } from './styles.js';
 
 class Top100 extends Component {
     constructor() {
@@ -115,9 +115,9 @@ class Top100 extends Component {
         }
 
         return (
-            <div className="container">
+            <RankingContainer>
                 <Header />
-                <h2>Top 100</h2>
+                <h1>Top 100</h1>
 
                 <select onChange={this.handleChangeSelect}>
                     <option id="musics">Músicas</option>
@@ -126,7 +126,7 @@ class Top100 extends Component {
                 </select>
 
                 {container}
-            </div>
+            </RankingContainer>
             
         )
     }
