@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { HeaderContainer } from './styles';
+import logoVagalume from '../../assets/images/logo.png';
 
 export default class Header extends Component {
     state = {
@@ -23,7 +24,7 @@ export default class Header extends Component {
 
         return (
             <HeaderContainer>
-                <h1>Vagalume</h1>
+                <img src={logoVagalume} alt="Logo vagalume" />
                 <form onSubmit={this.handleSubmit}>
                     <input type="text" placeholder="O que você quer ouvir hoje?" onChange={this.handleChangeInput}/>
                     <button type="submit">Buscar</button>
