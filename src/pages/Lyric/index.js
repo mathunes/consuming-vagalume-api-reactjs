@@ -40,7 +40,7 @@ class Lyric extends Component {
     render() {
 
         let data = this.props.search;
-        console.log(data)
+        
         let container;
 
         if (this.state.noId) {
