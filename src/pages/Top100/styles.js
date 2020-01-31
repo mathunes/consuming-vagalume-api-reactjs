@@ -34,6 +34,24 @@ export const RankingContainer = styled.div`
             outline: none;
         }
 
+        @media (max-width: 700px) {
+            & {
+                margin: 0 40px 20px;
+                width: 130px;
+                height: 35px;
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            & {
+                margin: 0 20px 20px;
+                width: 110px;
+                height: 30px;
+                font-size: 16px;
+            }
+        }
+
     }
 
     @media (max-width: 460px) {
@@ -71,10 +89,30 @@ export const CardContainer = styled.div`
     align-items: center;
     margin: 0 60px;
 
+    @media (max-width: 700px) {
+        & {
+            margin: 0 40px;
+        }
+    }
+
+    @media (max-width: 500px) {
+        & {
+            margin: 0 20px;
+        }
+    }
+
     div {
+        max-width: 200px;
+
         p {
             font-size: 16px;
             margin: 5px;
+
+            @media (max-width: 500px) {
+                & {
+                    font-size: 14px;
+                }
+            }
         }
 
         p:first-child {
@@ -93,6 +131,12 @@ export const CardContainer = styled.div`
                 &:hover {
                     color: #021E7B;
                 }
+
+                @media (max-width: 500px) {
+                    & {
+                        font-size: 15px;
+                    }
+                }
             }
         }
 
@@ -107,6 +151,12 @@ export const Score = styled.p`
     font-size: 12px !important;
     width: 80px;
     padding: 3px;
+
+    @media (max-width: 500px) {
+        & {
+            font-size: 11px;
+        }
+    }
 `
 
 export const Ordinal = styled.p`
@@ -116,9 +166,11 @@ export const Ordinal = styled.p`
     width: 40px;
     margin-right: 30px;
 
-    @media (max-width: 460px) {
+    @media (max-width: 500px) {
         & {
             font-size: 28px;
+            width: 28px;
+            margin-right: 20px;
         }
     }
 `
@@ -128,7 +180,7 @@ export const OrdinalLessThanTen = styled(Ordinal)`
 
     @media (max-width: 460px) {
         & {
-            font-size: 24px;
+            font-size: 22px;
         }
     }
 `
@@ -145,6 +197,13 @@ export const PictureArt = styled.div`
 
     img {
         height: 100%;
+    }
+
+    @media (max-width: 500px) {
+        & {
+            width: 35px;
+            height: 35px;
+        }
     }
 `
 
