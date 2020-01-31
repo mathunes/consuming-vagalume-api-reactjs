@@ -4,6 +4,7 @@ import logoVagalume from '../../assets/images/logo.png';
 import iconSearchWhite from '../../assets/images/search-white.png';
 import iconSearchYellow from '../../assets/images/search-yellow.png';
 import BoxSearch from '../BoxSearch';
+import { Link } from 'react-router-dom';
 
 export default class Header extends Component {
     state = {
@@ -38,7 +39,9 @@ export default class Header extends Component {
             <div>
                 {this.state.search ? <BoxSearch handleClick={this.handleChildClick.bind(this)}/> : ''}
                 <HeaderContainer>
-                    <img src={logoVagalume} alt="Logo vagalume" />
+                    <Link to='/'>
+                        <img src={logoVagalume} alt="Logo vagalume" />
+                    </Link>
 
                     <form onClick={this.handleClick}>
                         <input type="text" placeholder="O que você quer ouvir hoje?" onChange={this.handleChangeInput}/>
