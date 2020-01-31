@@ -54,14 +54,13 @@ class Lyric extends Component {
                 <div>
                     {(data.dataLyric.mus !== undefined) ? 
                         data.dataLyric.mus.map((item, i) => {
-                            let lyric = item.text.split(/\n/g);
                             return (
                                 <Lyrics key>
                                     <h2>{item.name}</h2>
                                     <h3>{data.dataLyric.art.name}</h3>
                                     <ContainerLyrics>
                                         <OriginalLyric>
-                                            {lyric.map((verse, i) => {
+                                            {item.text.split(/\n/g).map((verse, i) => {
                                                 return (
                                                     <div key={i}>
                                                         {verse}
@@ -75,7 +74,17 @@ class Lyric extends Component {
                                         {(item.translate !== undefined) ?
                                             item.translate.map((item, i) => {
                                                 return (
-                                                    <TranslateLyric key={i}>{item.text}</TranslateLyric>
+                                                    <TranslateLyric key={i}>
+                                                        {item.text.split(/\n/g).map((verse, i) => {
+                                                            return (
+                                                                <div key={i}>
+                                                                    {verse}
+                                                                    <br></br>
+                                                                </div>
+                                                                
+                                                            )
+                                                        })}
+                                                    </TranslateLyric>
                                                 )
                                             }) : ''
                                         }
