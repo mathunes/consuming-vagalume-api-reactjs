@@ -114,7 +114,7 @@ export const Ordinal = styled.p`
     font-weight: bold;
     color: #969696;
     width: 40px;
-    margin-right: 40px;
+    margin-right: 30px;
 
     @media (max-width: 460px) {
         & {
@@ -122,6 +122,17 @@ export const Ordinal = styled.p`
         }
     }
 `
+
+export const OrdinalLessThanTen = styled(Ordinal)`
+    font-size: 32px;
+
+    @media (max-width: 460px) {
+        & {
+            font-size: 24px;
+        }
+    }
+`
+
 export const PictureArt = styled.div`
     width: 60px;
     height: 60px;

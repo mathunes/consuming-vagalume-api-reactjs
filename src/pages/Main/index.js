@@ -18,6 +18,7 @@ class Main extends Component {
         let container;
 
         if (this.props.search.searchRanking) {
+            //Verificar se houve error ---------------------------------------------------------------------------------------------------
             let {mus, art, alb} = this.props.search.dataRanking;
             
             container = 

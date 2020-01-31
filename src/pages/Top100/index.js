@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import * as searchActions from '../../actions';
 import Header from '../../components/Header';
 import loadingGif from '../../assets/images/loading.gif';
-import {LoadingImage, RankingContainer, CardContainer, Ordinal, PictureArt, PictureAlb, Score } from './styles.js';
+import {LoadingImage, RankingContainer, CardContainer, Ordinal, OrdinalLessThanTen, PictureArt, PictureAlb, Score } from './styles.js';
 import { Link } from 'react-router-dom';
 
 class Top100 extends Component {
@@ -61,9 +61,10 @@ class Top100 extends Component {
                         {data.art.month.all.map((item, i) => {
                             return (
                                 <CardContainer key={i}>
-                                    <Ordinal>
-                                        {i+1 + '°'}
-                                    </Ordinal>
+                                    {(i < 10) ? 
+                                        <Ordinal>{i+1 + '°'}</Ordinal> :
+                                        <OrdinalLessThanTen>{i+1 + '°'}</OrdinalLessThanTen>
+                                    }
                                     <PictureArt>
                                         <img src={item.pic_small} alt="Imagem do cantor/banda" />
                                     </PictureArt>
@@ -83,9 +84,10 @@ class Top100 extends Component {
                         {data.mus.month.all.map((item, i) => {
                             return (
                                 <CardContainer key={i}>
-                                    <Ordinal>
-                                        {i+1 + '°'}
-                                    </Ordinal>
+                                    {(i < 10) ? 
+                                        <Ordinal>{i+1 + '°'}</Ordinal> :
+                                        <OrdinalLessThanTen>{i+1 + '°'}</OrdinalLessThanTen>
+                                    }
                                     <div>
                                         <p>
                                             <Link to={'/lyric/id=' + item.id}>
@@ -106,9 +108,10 @@ class Top100 extends Component {
                         {data.alb.month.all.map((item, i) => {
                             return (
                                 <CardContainer key={i}>
-                                    <Ordinal>
-                                        {i+1 + '°'}
-                                    </Ordinal>
+                                    {(i < 10) ? 
+                                        <Ordinal>{i+1 + '°'}</Ordinal> :
+                                        <OrdinalLessThanTen>{i+1 + '°'}</OrdinalLessThanTen>
+                                    }
                                     <PictureAlb>
                                         <img src={item.cover.replace('-W100.jpg', '.webp')} alt="Imagem do álbum" />
                                     </PictureAlb>
