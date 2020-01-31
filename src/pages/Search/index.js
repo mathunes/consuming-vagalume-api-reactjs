@@ -60,10 +60,11 @@ class Search extends Component {
                                 console.log(item)
                                 return (
                                     <li key={i}>
-                                        <p>Letra</p>
-                                        <p>{item.title}</p>
-                                        <p>{item.band}</p>
-                                        <Link to={'/lyric/id=' + item.id}>Letra</Link>
+                                        <h2>Letra</h2>
+                                        <Link to={'/lyric/id=' + item.id}>
+                                            <p>{item.title}</p>
+                                            <p>{item.band}</p>    
+                                        </Link>
                                     </li>
                                     
                                 )
