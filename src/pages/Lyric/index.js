@@ -60,6 +60,11 @@ class Lyric extends Component {
                                     <h3>{data.dataLyric.art.name}</h3>
                                     <ContainerLyrics>
                                         <OriginalLyric>
+                                            <h4>
+                                                {item.name}
+                                                <br></br>
+                                                <br></br>
+                                            </h4>
                                             {item.text.split(/\n/g).map((verse, i) => {
                                                 return (
                                                     <div key={i}>
@@ -76,12 +81,17 @@ class Lyric extends Component {
                                                 return (
                                                     <TranslateLyric key={i}>
                                                         {item.text.split(/\n/g).map((verse, i) => {
-                                                            return (
+                                                            return (                                                            
                                                                 <div key={i}>
-                                                                    {verse}
-                                                                    <br></br>
+                                                                    {(i === 0) ? 
+                                                                        <div>
+                                                                            <h4>{verse.replace('[', '').replace(']', '')}</h4>
+                                                                        </div> : 
+                                                                        <div>
+                                                                            {verse}
+                                                                            <br></br>
+                                                                        </div>}
                                                                 </div>
-                                                                
                                                             )
                                                         })}
                                                     </TranslateLyric>
