@@ -57,13 +57,16 @@ class Lyric extends Component {
                 container = 
                 <div>
                     {(data.dataLyric.mus !== undefined) ? 
+
                         data.dataLyric.mus.map((item, i) => {
+                            let alignLyric;
+                            (item.translate === undefined) ? alignLyric = 'left' : alignLyric = 'right';
                             return (
                                 <Lyrics key>
                                     <h2>{item.name}</h2>
                                     <h3>{data.dataLyric.art.name}</h3>
                                     <ContainerLyrics>
-                                        <OriginalLyric>
+                                        <OriginalLyric alignLyric={alignLyric}>
                                             <h4>
                                                 {item.name}
                                                 <br></br>
@@ -71,10 +74,12 @@ class Lyric extends Component {
                                             </h4>
                                             {item.text.split(/\n/g).map((verse, i) => {
                                                 return (
-                                                    <div key={i}>
-                                                        {verse}
-                                                        <br></br>
-                                                    </div>
+                                                    <span key={i}>
+                                                        <p>
+                                                            {verse}
+                                                            <br></br>
+                                                        </p>
+                                                    </span>
                                                     
                                                 )
                                             })}
@@ -86,16 +91,16 @@ class Lyric extends Component {
                                                     <TranslateLyric key={i}>
                                                         {item.text.split(/\n/g).map((verse, i) => {
                                                             return (                                                            
-                                                                <div key={i}>
+                                                                <span key={i}>
                                                                     {(i === 0) ? 
-                                                                        <div>
+                                                                        
                                                                             <h4>{verse.replace('[', '').replace(']', '')}</h4>
-                                                                        </div> : 
-                                                                        <div>
+                                                                        :
+                                                                        <p>
                                                                             {verse}
                                                                             <br></br>
-                                                                        </div>}
-                                                                </div>
+                                                                        </p>}
+                                                                </span>
                                                             )
                                                         })}
                                                     </TranslateLyric>

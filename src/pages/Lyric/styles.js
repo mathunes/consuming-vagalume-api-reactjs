@@ -54,7 +54,7 @@ export const ContainerLyrics = styled.div`
 export const OriginalLyric = styled.div`
     width: 400px;
     margin: 15px;
-    text-align: right;
+    text-align: ${props => `${props.alignLyric}`};
     h4 {
         font-weight: bold;
     }
