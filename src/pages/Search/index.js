@@ -4,7 +4,8 @@ import { bindActionCreators } from 'redux';
 import * as actionsSearch from '../../actions';
 import { connect } from 'react-redux';
 import { Redirect, Link } from 'react-router-dom';
-import { Container, SearchContainer } from './styles.js';
+import loadingGif from '../../assets/images/loading.gif';
+import { Container, SearchContainer, LoadingImage } from './styles.js';
 
 class Search extends Component {
 
@@ -54,7 +55,10 @@ class Search extends Component {
             container = <Redirect to="/" />
         } else {
             if (this.props.search.loading) {
-                container = <h1>Carregando</h1>
+                container =
+                    <LoadingImage>
+                        <img src={loadingGif} alt="Carregando"></img>
+                    </LoadingImage>
             } else {
                 if (this.props.search.data.response !== undefined) {
 
