@@ -79,6 +79,7 @@ export const OriginalLyric = styled.div`
     width: 400px;
     margin: 15px;
     text-align: ${props => `${props.alignLyric}`};
+    font-size: 18px;
 
     h4 {
         font-weight: bold;
