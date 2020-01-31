@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import * as actionsSearch from '../../actions';
 import { connect } from 'react-redux';
 import { Redirect, Link } from 'react-router-dom';
+import { Container, SearchContainer } from './styles.js';
 
 class Search extends Component {
 
@@ -56,6 +57,7 @@ class Search extends Component {
                     container = 
                         <ul>
                             {this.props.search.data.response.docs.map((item, i) => {
+                                console.log(item)
                                 return (
                                     <li key={i}>
                                         <p>Letra</p>
@@ -72,10 +74,12 @@ class Search extends Component {
         }
 
         return (
-            <div>
+            <Container>
                 <Header />
-                {container}
-            </div>
+                <SearchContainer>
+                    {container}
+                </SearchContainer>
+            </Container>
         )
     }
 
