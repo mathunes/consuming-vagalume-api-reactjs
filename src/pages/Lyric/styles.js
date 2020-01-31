@@ -3,13 +3,13 @@ import '../../assets/fonts/index.css';
 
 export const Container = styled.div`
     position: relative;
-    height: 100%;
+    min-height: calc(100vh - 127px);
 `
 
 export const ContainerLyric = styled.div`
     padding: 20px;
     position: relative;
-    height: 100%;
+    min-height: calc(100vh - 127px);
 `
 
 export const ErrorMessage = styled.div`
@@ -62,4 +62,22 @@ export const OriginalLyric = styled.div`
 
 export const TranslateLyric = styled(OriginalLyric)`
     text-align: left;
+`
+
+export const LoadingImage = styled.div`
+    width: 100%;
+    height: calc(100vh - 187px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: 100px;
+
+        @media (max-width: 460px) {
+            & {
+                width: 70px;
+            }
+        }
+    }
 `
