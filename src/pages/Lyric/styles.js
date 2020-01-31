@@ -10,6 +10,12 @@ export const ContainerLyric = styled.div`
     padding: 20px;
     position: relative;
     min-height: calc(100vh - 127px);
+
+    @media (max-width: 600px) {
+        & {
+            padding: 10px;
+        }
+    }
 `
 
 export const ErrorMessage = styled.div`
@@ -34,6 +40,12 @@ export const Lyrics = styled.div`
         font-size: 30px;
         font-weight: 800;
         margin: 10px;
+
+        @media (max-width: 600px) {
+            & {
+                font-size: 24px;
+            }
+        }
     }
 
     h3 {
@@ -42,6 +54,12 @@ export const Lyrics = styled.div`
         font-weight: 600;
         margin: 10px;
         color: #006688;
+
+        @media (max-width: 600px) {
+            & {
+                font-size: 12px;
+            }
+        }
     }
 
 `
@@ -49,14 +67,36 @@ export const Lyrics = styled.div`
 export const ContainerLyrics = styled.div`
     display: flex;
     justify-content: center;
+
+    @media (max-width: 600px) {
+        & {
+            flex-direction: column;
+        }
+    }
 `
 
 export const OriginalLyric = styled.div`
     width: 400px;
     margin: 15px;
     text-align: ${props => `${props.alignLyric}`};
+
     h4 {
         font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+        & {
+            width: 100%;
+            text-align: left;
+            margin: 10px 10px 20px 10px;
+            font-size: 16px;
+        }
+    }
+
+    span {
+        p {
+            padding: 0 10px 0 0;
+        }
     }
 `
 
