@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import * as actionSearchLyric from '../../actions';
 import { connect } from 'react-redux';
+import { ContainerLyric, ErrorMessage } from './styles.js';
 
 class Lyric extends Component {
 
@@ -68,7 +69,11 @@ class Lyric extends Component {
                                     
                                 </div>
                             )
-                }) : '' }
+                }) : 
+                    <ErrorMessage>
+                        <span>Não encontrado</span>
+                    </ErrorMessage> }
+                
                 </div>
             }
         }
@@ -76,7 +81,9 @@ class Lyric extends Component {
         return (
             <div>
                 <Header />
-                {container}
+                <ContainerLyric>
+                    {container}
+                </ContainerLyric>
             </div>
         )
     }
