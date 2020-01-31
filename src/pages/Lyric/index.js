@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import * as actionSearchLyric from '../../actions';
 import { connect } from 'react-redux';
-import { ContainerLyric, ErrorMessage, Lyrics, OriginalLyric, TranslateLyric, ContainerLyrics } from './styles.js';
+import { ContainerLyric, ErrorMessage, Lyrics, OriginalLyric, TranslateLyric, ContainerLyrics, Container } from './styles.js';
 
 class Lyric extends Component {
 
@@ -111,12 +111,12 @@ class Lyric extends Component {
         }
 
         return (
-            <div>
+            <Container>
                 <Header />
                 <ContainerLyric>
                     {container}
                 </ContainerLyric>
-            </div>
+            </Container>
         )
     }
 }

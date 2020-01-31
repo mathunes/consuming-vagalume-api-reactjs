@@ -1,8 +1,15 @@
 import styled from 'styled-components';
 import '../../assets/fonts/index.css';
 
+export const Container = styled.div`
+    position: relative;
+    height: 100%;
+`
+
 export const ContainerLyric = styled.div`
     padding: 20px;
+    position: relative;
+    height: 100%;
 `
 
 export const ErrorMessage = styled.div`
@@ -24,14 +31,14 @@ export const Lyrics = styled.div`
 
     h2 {
         text-align: center;
-        font-size: 28px;
+        font-size: 30px;
         font-weight: 800;
         margin: 10px;
     }
 
     h3 {
         text-align: center;
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 600;
         margin: 10px;
         color: #006688;
@@ -45,9 +52,12 @@ export const ContainerLyrics = styled.div`
 `
 
 export const OriginalLyric = styled.div`
-    max-width: 400px;
+    width: 400px;
     margin: 15px;
     text-align: right;
+    h4 {
+        font-weight: bold;
+    }
 `
 
 export const TranslateLyric = styled(OriginalLyric)`
