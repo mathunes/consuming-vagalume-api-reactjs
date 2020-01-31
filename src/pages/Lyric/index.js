@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import * as actionSearchLyric from '../../actions';
 import { connect } from 'react-redux';
-import { ContainerLyric, ErrorMessage } from './styles.js';
+import { ContainerLyric, ErrorMessage, Lyrics, OriginalLyric, TranslateLyric, ContainerLyrics } from './styles.js';
 
 class Lyric extends Component {
 
@@ -54,20 +54,33 @@ class Lyric extends Component {
                 <div>
                     {(data.dataLyric.mus !== undefined) ? 
                         data.dataLyric.mus.map((item, i) => {
+                            let lyric = item.text.split(/\n/g);
                             return (
-                                <div key>
+                                <Lyrics key>
                                     <h2>{item.name}</h2>
                                     <h3>{data.dataLyric.art.name}</h3>
-                                    <p>{item.text}</p>
-                                    {(item.translate !== undefined) ?
-                                        item.translate.map((item, i) => {
-                                            return (
-                                                <p key={i}>{item.text}</p>
-                                            )
-                                        }) : ''
-                                    }
-                                    
-                                </div>
+                                    <ContainerLyrics>
+                                        <OriginalLyric>
+                                            {lyric.map((verse, i) => {
+                                                return (
+                                                    <div key={i}>
+                                                        {verse}
+                                                        <br></br>
+                                                    </div>
+                                                    
+                                                )
+                                            })}
+                                        </OriginalLyric>
+                                        
+                                        {(item.translate !== undefined) ?
+                                            item.translate.map((item, i) => {
+                                                return (
+                                                    <TranslateLyric key={i}>{item.text}</TranslateLyric>
+                                                )
+                                            }) : ''
+                                        }
+                                    </ContainerLyrics>
+                                </Lyrics>
                             )
                 }) : 
                     <ErrorMessage>
