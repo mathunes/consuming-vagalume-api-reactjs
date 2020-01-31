@@ -15,6 +15,18 @@ export const SearchContainer = styled.div`
     font-family: 'Rubik', sans-serif;
     position: relative;
 
+    h2 {
+        padding: 10px 10vw 20px;
+        font-size: 30px;
+        font-weight: bold;
+        color: #333333;
+
+        @media (max-width: 600px) {
+            padding: 10px 5vw 15px;
+            font-size: 22px;
+        }
+    }
+
     li {
         padding: 10px 10vw;
         display: flex;
@@ -27,7 +39,7 @@ export const SearchContainer = styled.div`
             }
         }
 
-        h2 {
+        h3 {
             background-color: #707070;
             color: #ffffff;
             font-size: 12px;
@@ -53,6 +65,12 @@ export const SearchContainer = styled.div`
             text-decoration: none;
             color: #024B7B;
 
+            @media (max-width: 600px) {
+                & {
+                    justify-content: space-between;
+                }
+            }
+
             &:hover {
                 color: #041591;
             }
@@ -64,6 +82,12 @@ export const SearchContainer = styled.div`
                     &:after {
                         content: '-';
                         margin-left: 10px;
+
+                        @media (max-width: 600px) {
+                            & {
+                                display: none;
+                            }
+                        }
                     }
                 }
 

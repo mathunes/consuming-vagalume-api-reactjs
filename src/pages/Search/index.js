@@ -29,6 +29,10 @@ class Search extends Component {
         
         if (!this.state.search) {
             this.search(text);
+
+            this.setState({
+                text
+            })
         }
     }
 
@@ -55,21 +59,23 @@ class Search extends Component {
                 if (this.props.search.data.response !== undefined) {
 
                     container = 
-                        <ul>
-                            {this.props.search.data.response.docs.map((item, i) => {
-                                console.log(item)
-                                return (
-                                    <li key={i}>
-                                        <h2>Letra</h2>
-                                        <Link to={'/lyric/id=' + item.id}>
-                                            <p>{item.title}</p>
-                                            <p>{item.band}</p>    
-                                        </Link>
-                                    </li>
-                                    
-                                )
-                            })}
-                        </ul>
+                        <div>
+                            <h2>Resultados para "{this.state.text}"</h2>
+                            <ul>
+                                {this.props.search.data.response.docs.map((item, i) => {
+                                    return (
+                                        <li key={i}>
+                                            <h3>Letra</h3>
+                                            <Link to={'/lyric/id=' + item.id}>
+                                                <p>{item.title}</p>
+                                                <p>{item.band}</p>    
+                                            </Link>
+                                        </li>
+                                        
+                                    )
+                                })}
+                            </ul>
+                        </div>
                 }
             }
         }
