@@ -7,13 +7,13 @@ export const Container = styled.div`
 `
 
 export const ContainerLyric = styled.div`
-    padding: 20px;
+    padding: 0 20px 20px 20px;
     position: relative;
     min-height: calc(100vh - 127px);
 
     @media (max-width: 600px) {
         & {
-            padding: 10px;
+            padding: 0 10px 10px 10px;
         }
     }
 `
@@ -94,11 +94,6 @@ export const OriginalLyric = styled.div`
         }
     }
 
-    span {
-        p {
-            padding: 0 10px 0 0;
-        }
-    }
 `
 
 export const TranslateLyric = styled(OriginalLyric)`
@@ -120,5 +115,32 @@ export const LoadingImage = styled.div`
                 width: 70px;
             }
         }
+    }
+`
+
+export const BackButton = styled.button`
+    background-color: transparent;
+    border: 0;
+    margin: 10px 0 0 10px;
+    font-size: 14px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #024B7B;
+
+    @media (min-width: 600px) {
+        & {
+            margin: 20px 0 0 20vw;
+            font-size: 15px;
+        }
+    }
+
+    &:hover {
+        color: #041591;
+        cursor: pointer;
+    }
+
+    &:focus {
+        outline: none;
     }
 `

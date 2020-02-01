@@ -20,7 +20,7 @@ class Main extends Component {
         if (this.props.search.searchRanking) {
             //Verificar se houve error ---------------------------------------------------------------------------------------------------
             let {mus, art, alb} = this.props.search.dataRanking;
-            
+            {console.log(this.props)}
             container = 
                 <CardsContainer>
                     <CardContainer>

@@ -20,6 +20,13 @@ export const HeaderContainer = styled.header`
         border-radius: 5px;
         transition: all .2s;
         position: relative;
+        min-height: 90px;
+
+        @media (max-width: 700px) {
+            & {
+                min-height: 75px;
+            }
+        }
 
         &:hover {
             box-shadow: 0px 0px 15px 2px #CCFF00;

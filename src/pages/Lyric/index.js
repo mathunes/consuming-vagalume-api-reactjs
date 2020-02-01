@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import * as actionSearchLyric from '../../actions';
 import { connect } from 'react-redux';
-import { ContainerLyric, ErrorMessage, Lyrics, OriginalLyric, TranslateLyric, ContainerLyrics, Container, LoadingImage } from './styles';
+import { ContainerLyric, ErrorMessage, Lyrics, OriginalLyric, TranslateLyric, ContainerLyrics, Container, LoadingImage, BackButton } from './styles';
 import loadingGif from '../../assets/images/loading.gif';
 
 class Lyric extends Component {
@@ -122,6 +122,7 @@ class Lyric extends Component {
         return (
             <Container>
                 <Header />
+                <BackButton onClick={() => this.props.history.goBack()}>Voltar</BackButton>
                 <ContainerLyric>
                     {container}
                 </ContainerLyric>

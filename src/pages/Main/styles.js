@@ -27,7 +27,7 @@ export const MainContainer = styled.div`
                 font-weight: 200;
                 font-size: 14px;
                 color: #737373;
-                margin: 10px;
+                margin: 15px;
             }
         }
 
@@ -46,7 +46,7 @@ export const MainContainer = styled.div`
 
 export const LoadingImage = styled.div`
     width: 100%;
-    height: calc(100vh - 187px);
+    height: calc(100vh - 188px);
     display: flex;
     justify-content: center;
     align-items: center;
