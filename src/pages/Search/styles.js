@@ -10,7 +10,7 @@ export const Container = styled.div`
 export const SearchContainer = styled.div`
     width: 100%;
     min-height: calc(100vh - 87px);
-    padding: 20px;
+    padding: 0 20px 20px 20px;
     box-sizing: border-box;
     font-family: 'Rubik', sans-serif;
     position: relative;
@@ -116,5 +116,34 @@ export const LoadingImage = styled.div`
                 width: 70px;
             }
         }
+    }
+`
+
+export const BackButton = styled.button`
+    background-color: transparent;
+    border: 0;
+    margin: 10px 5vw 15px;
+    padding: 10px 0 0 20px;
+    font-size: 12px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #024B7B;
+
+    @media (min-width: 600px) {
+        & {
+            padding: 10px 0 0 20px;
+            margin: 10px 10vw 20px;
+            font-size: 15px;
+        }
+    }
+
+    &:hover {
+        color: #041591;
+        cursor: pointer;
+    }
+
+    &:focus {
+        outline: none;
     }
 `

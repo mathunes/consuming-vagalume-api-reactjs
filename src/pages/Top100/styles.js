@@ -210,3 +210,37 @@ export const PictureArt = styled.div`
 export const PictureAlb = styled(PictureArt)`
     border-radius: 5px;
 `;
+
+export const BackButton = styled.button`
+    background-color: transparent;
+    border: 0;
+    margin: 10px 40px 0;
+    font-size: 14px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #024B7B;
+
+    @media (min-width: 700px) {
+        & {
+            margin: 20px 60px 0;
+            font-size: 15px;
+        }
+    }
+
+    @media (max-width: 500px) {
+        & {
+            margin: 20px 20px 0;
+            font-size: 12px;
+        }
+    }
+
+    &:hover {
+        color: #041591;
+        cursor: pointer;
+    }
+
+    &:focus {
+        outline: none;
+    }
+`

@@ -173,7 +173,7 @@ export const CardContainer = styled.div`
                         }
 
                         p:first-child {
-                            font-size: 13px;
+                            font-size: 16px;
                         }
                     }
                 }
@@ -194,6 +194,7 @@ export const Ordinal = styled.p`
     @media (max-width: 460px) {
         & {
             font-size: 28px;
+            width: 28px;
         }
     }
 `

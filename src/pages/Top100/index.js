@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import * as searchActions from '../../actions';
 import Header from '../../components/Header';
 import loadingGif from '../../assets/images/loading.gif';
-import {LoadingImage, RankingContainer, CardContainer, Ordinal, OrdinalLessThanTen, PictureArt, PictureAlb, Score } from './styles.js';
+import {LoadingImage, RankingContainer, CardContainer, Ordinal, OrdinalLessThanTen, PictureArt, PictureAlb, Score, BackButton } from './styles.js';
 import { Link } from 'react-router-dom';
 
 class Top100 extends Component {
@@ -143,6 +143,7 @@ class Top100 extends Component {
         return (
             <RankingContainer>
                 <Header />
+                <BackButton onClick={() => this.props.history.goBack()}>Voltar</BackButton>
                 <h1>Top 100</h1>
 
                 <select onChange={this.handleChangeSelect}>

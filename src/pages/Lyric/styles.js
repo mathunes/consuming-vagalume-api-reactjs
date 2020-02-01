@@ -87,7 +87,7 @@ export const OriginalLyric = styled.div`
 
     @media (max-width: 600px) {
         & {
-            width: 100%;
+            width: 90%;
             text-align: left;
             margin: 10px 10px 20px 10px;
             font-size: 16px;
@@ -121,8 +121,9 @@ export const LoadingImage = styled.div`
 export const BackButton = styled.button`
     background-color: transparent;
     border: 0;
-    margin: 10px 0 0 10px;
-    font-size: 14px;
+    margin: 10px 0 0;
+    padding: 10px 0 0 20px;
+    font-size: 12px;
     font-family: 'Rubik', sans-serif;
     font-weight: bold;
     text-transform: uppercase;
@@ -130,7 +131,8 @@ export const BackButton = styled.button`
 
     @media (min-width: 600px) {
         & {
-            margin: 20px 0 0 20vw;
+            padding: 10px 0 0 20px;
+            margin: 10px 10vw 20px;
             font-size: 15px;
         }
     }

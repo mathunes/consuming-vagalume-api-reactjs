@@ -5,7 +5,7 @@ import * as actionsSearch from '../../actions';
 import { connect } from 'react-redux';
 import { Redirect, Link } from 'react-router-dom';
 import loadingGif from '../../assets/images/loading.gif';
-import { Container, SearchContainer, LoadingImage } from './styles.js';
+import { Container, SearchContainer, LoadingImage, BackButton } from './styles.js';
 
 class Search extends Component {
 
@@ -87,6 +87,7 @@ class Search extends Component {
         return (
             <Container>
                 <Header />
+                <BackButton onClick={() => this.props.history.goBack()}>Voltar</BackButton>
                 <SearchContainer>
                     {container}
                 </SearchContainer>
