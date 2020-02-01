@@ -31,7 +31,7 @@ class Main extends Component {
                                     <Ordinal>{i+1 + '°'}</Ordinal>
                                     <div>
                                         <p>
-                                            <Link to={'/lyric/id=' + item.id}>
+                                            <Link to={process.env.PUBLIC_URL + '/lyric/id=' + item.id}>
                                                 {item.name}
                                             </Link>
                                         </p>
@@ -41,7 +41,7 @@ class Main extends Component {
                             )
                         })}
                         </ol>
-                        <Link to="/top100/musics">
+                        <Link to={process.env.PUBLIC_URL + "/top100/musics"}>
                             <ButtonTop>
                             Ver o top 100 músicas
                             </ButtonTop>
@@ -66,7 +66,7 @@ class Main extends Component {
                             )
                         })}
                         </ol>
-                        <Link to="/top100/artists">
+                        <Link to={process.env.PUBLIC_URL +  "/top100/artists"}>
                             <ButtonTop>
                                 Ver o top 100 artistas
                             </ButtonTop>
@@ -88,7 +88,7 @@ class Main extends Component {
                             )
                         })}
                         </ol>
-                        <Link to="/top100/albums">
+                        <Link to={process.env.PUBLIC_URL + "/top100/albums"}>
                             <ButtonTop>
                             Ver o top 100 albuns
                             </ButtonTop>

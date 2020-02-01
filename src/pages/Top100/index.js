@@ -89,7 +89,7 @@ class Top100 extends Component {
                                     }
                                     <div>
                                         <p>
-                                            <Link to={'/lyric/id=' + item.id}>
+                                            <Link to={process.env.PUBLIC_URL + '/lyric/id=' + item.id}>
                                                 {item.name}
                                             </Link>
                                         </p>

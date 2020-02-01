@@ -39,7 +39,7 @@ export default class Header extends Component {
             <div>
                 {this.state.search ? <BoxSearch handleClick={this.handleChildClick.bind(this)}/> : ''}
                 <HeaderContainer>
-                    <Link to='/'>
+                    <Link to={process.env.PUBLIC_URL + '/'}>
                         <img src={logoVagalume} alt="Logo vagalume" />
                     </Link>
 

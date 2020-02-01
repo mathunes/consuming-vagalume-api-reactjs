@@ -70,7 +70,7 @@ class Search extends Component {
                                     return (
                                         <li key={i}>
                                             <h3>Letra</h3>
-                                            <Link to={'/lyric/id=' + item.id}>
+                                            <Link to={process.env.PUBLIC_URL + '/lyric/id=' + item.id}>
                                                 <p>{item.title}</p>
                                                 <p>{item.band}</p>    
                                             </Link>
