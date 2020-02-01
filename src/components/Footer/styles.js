@@ -5,6 +5,7 @@ export const FooterContainer = styled.footer`
     width: 100%;
     background-color: #151614;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
@@ -24,6 +25,14 @@ export const FooterContainer = styled.footer`
         & {
             font-size: 13px;
         }
+
+        span {
+            &:last-child {
+                a {
+                    font-size: 12px;
+                }
+            }
+        }
     }
 
     a {
@@ -32,6 +41,14 @@ export const FooterContainer = styled.footer`
 
         &:hover {
             color: #ffffff;
+        }
+    }
+
+    span {
+        margin: 5px;
+
+        &:last-child {
+            font-size: 14px;
         }
     }
 `
