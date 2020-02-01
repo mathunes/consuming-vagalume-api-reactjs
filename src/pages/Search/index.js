@@ -64,7 +64,7 @@ class Search extends Component {
 
                     container = 
                         <div>
-                            <h2>Resultados para "{this.state.text}"</h2>
+                            {(this.props.search.data.response.numFound === 0) ? <h2>Não encontrado</h2> : <h2>Resultados para "{this.state.text}"</h2>}
                             <ul>
                                 {this.props.search.data.response.docs.map((item, i) => {
                                     return (

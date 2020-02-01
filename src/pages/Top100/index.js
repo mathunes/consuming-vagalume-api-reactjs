@@ -55,8 +55,7 @@ class Top100 extends Component {
             let data = this.props.search.dataRanking;
 
             switch (this.state.type) {
-                case 'art':
-                    
+                case 'art':    
                     top100 = <ol>
                         {data.art.month.all.map((item, i) => {
                             return (
