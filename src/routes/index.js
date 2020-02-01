@@ -6,7 +6,7 @@ import Search from '../pages/Search';
 import Lyrics from '../pages/Lyric';
 
 const Routes = () => (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter>
         <Switch>
             <Route exact path={process.env.PUBLIC_URL + '/'} component={Main} />
             <Route path={process.env.PUBLIC_URL + '/top100/:type'} component={Top100} />
