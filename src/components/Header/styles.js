@@ -12,7 +12,7 @@ export const HeaderContainer = styled.header`
 
     @media (max-width: 700px) {
         & {
-            min-height: 75px;
+            min-height: 60px;
         }
     }
 
@@ -97,10 +97,15 @@ export const HeaderContainer = styled.header`
     @media (max-width: 700px) {
         img {
             margin: 0 auto;
-            width: 150px;
+            width: 125px;
+            padding-left: 20px;
         }
 
         form {
+            position: relative;
+            width: 100%;
+            height: 100%;
+
             input[type="text"] {
                 display: none;
             }
@@ -110,7 +115,7 @@ export const HeaderContainer = styled.header`
             }
 
             button {
-                background-color: #151614;
+                background-color: transparent;
                 position: absolute;
                 padding-right: 20px;
                 right: 0;
@@ -125,13 +130,7 @@ export const HeaderContainer = styled.header`
 
     @media (max-width: 400px) {
         img {
-            width: 130px;
-        }
-
-        form {
-            button {
-                padding-right: 10px;
-            }
+            width: 120px;
         }
     }
 `;
