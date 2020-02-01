@@ -17,7 +17,7 @@ export default class BoxSearch extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
 
-        window.location.href = '/search/' + this.state.text;
+        window.location.href = 'consuming-vagalume-api-reactjs/search/' + this.state.text;
     }
 
     render() {
