@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/vagalume-clone/static/css/main.2acfe684.chunk.css",
+    "main.js": "/vagalume-clone/static/js/main.0be3282b.chunk.js",
+    "main.js.map": "/vagalume-clone/static/js/main.0be3282b.chunk.js.map",
+    "runtime-main.js": "/vagalume-clone/static/js/runtime-main.0fc7fd14.js",
+    "runtime-main.js.map": "/vagalume-clone/static/js/runtime-main.0fc7fd14.js.map",
+    "static/js/2.599ab5ed.chunk.js": "/vagalume-clone/static/js/2.599ab5ed.chunk.js",
+    "static/js/2.599ab5ed.chunk.js.map": "/vagalume-clone/static/js/2.599ab5ed.chunk.js.map",
+    "index.html": "/vagalume-clone/index.html",
+    "precache-manifest.bccf6062ff0eda586bfbaee9a12c5fee.js": "/vagalume-clone/precache-manifest.bccf6062ff0eda586bfbaee9a12c5fee.js",
+    "service-worker.js": "/vagalume-clone/service-worker.js",
+    "static/css/main.2acfe684.chunk.css.map": "/vagalume-clone/static/css/main.2acfe684.chunk.css.map",
+    "static/js/2.599ab5ed.chunk.js.LICENSE.txt": "/vagalume-clone/static/js/2.599ab5ed.chunk.js.LICENSE.txt",
+    "static/media/loading.gif": "/vagalume-clone/static/media/loading.d3745620.gif",
+    "static/media/logo.png": "/vagalume-clone/static/media/logo.10b9b6a3.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0fc7fd14.js",
+    "static/js/2.599ab5ed.chunk.js",
+    "static/css/main.2acfe684.chunk.css",
+    "static/js/main.0be3282b.chunk.js"
+  ]
+}
